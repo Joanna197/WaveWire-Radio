@@ -1,176 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music App</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .sidebar {
-            width: 280px;
-            height: 100vh;
-            background: linear-gradient(45deg, #8e2de2, #4a00e0);
-            position: fixed;
-            left: 0;
-            top: 0;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .sidebar.collapsed {
-            transform: translateX(-280px);
-        }
-        .sidebar-content {
-            padding: 30px;
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .collapsed .sidebar-content {
-            opacity: 0;
-        }
-        .sidebar-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .sidebar-close:hover {
-            transform: scale(1.1);
-        }
-        h2 {
-            color: white;
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 20px;
-            transform: translateX(0);
-            transition: transform 0.3s ease;
-        }
-        .collapsed li {
-            transform: translateX(-20px);
-        }
-        a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 18px;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: block;
-        }
-        a:hover, a.active {
-            color: white;
-            transform: translateX(5px);
-        }
-        .icon {
-            margin-right: 10px;
-            font-size: 20px;
-        }
-        .sidebar-open {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #4a00e0;
-            cursor: pointer;
-            z-index: 999;
-            display: none;
-        }
-        .sidebar.collapsed + .sidebar-open {
-            display: block;
-        }
-        .content {
-            margin-left: 280px;
-            padding: 20px;
-            transition: margin-left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-        .sidebar.collapsed + .sidebar-open + .content {
-            margin-left: 0;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaveWire Radio</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">🎵WaveWire Radio</div>
+      <nav class="nav">
+        <a href="#for-you" class="nav-btn active">Home</a>
+        <a href="#about" class="nav-btn">About Us</a>
+        <a href="#events-concerts" class="nav-btn">Events</a>
+        <a href="#news" class="nav-btn">News</a>
+        <a href="#live-shows" class="nav-btn">Live Shows</a>
+        <a href="#vinyl-merch" class="nav-btn">Vinyl & Merch</a>
+        <a href="#support" class="donate-btn">Support Us!</a>
+      </nav>
+    </div>
+
     <div class="sidebar" id="sidebar">
-        <button class="sidebar-close" id="sidebarClose">×</button>
-        <div class="sidebar-content">
-            <h2>🎵 Music App</h2>
-            <ul>
-                <li><a href="#for-you" class="nav-link"><span class="icon">🏠</span>For You</a></li>
-                <li><a href="#live-radio" class="nav-link"><span class="icon">📻</span>Live Radio</a></li>
-                <li><a href="#podcasts" class="nav-link"><span class="icon">🎙️</span>Podcasts</a></li>
-                <li><a href="#artist-radio" class="nav-link"><span class="icon">🎸</span>Artist Radio</a></li>
-                <li><a href="#news" class="nav-link"><span class="icon">📰</span>News</a></li>
-                <li><a href="#your-library" class="nav-link"><span class="icon">📚</span>Your Library</a></li>
-                <li><a href="#playlists" class="nav-link"><span class="icon">🎶</span>Playlists</a></li>
-                <li><a href="#events-concerts" class="nav-link"><span class="icon">🎭</span>Events and Concerts</a></li>
-            </ul>
-        </div>
+      <div class="sidebar-header">
+        <h2 style="margin: 0">WaveWire Radio</h2>
+        <button
+          class="sidebar-close"
+          id="sidebarClose"
+          aria-label="Close sidebar"
+        >
+          ×
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li>
+            <a href="#for-you" class="nav-link active">
+              <span class="icon">🏠</span>For You
+            </a>
+          </li>
+          <li>
+            <a href="#live-shows" class="nav-link">
+              <span class="icon">🎥</span>Live Shows
+            </a>
+          </li>
+          <li>
+            <a href="#vinyl-merch" class="nav-link">
+              <span class="icon">💿</span>Vinyl & Merch
+            </a>
+          </li>
+          <li>
+            <a href="#live-radio" class="nav-link">
+              <span class="icon">📻</span>Live Radio
+            </a>
+          </li>
+          <li>
+            <a href="#podcasts" class="nav-link">
+              <span class="icon">🎙️</span>Podcasts
+            </a>
+          </li>
+          <li>
+            <a href="#artist-radio" class="nav-link">
+              <span class="icon">🎸</span>Artist Radio
+            </a>
+          </li>
+          <li>
+            <a href="#news" class="nav-link">
+              <span class="icon">📰</span>News
+            </a>
+          </li>
+          <li>
+            <a href="#your-library" class="nav-link">
+              <span class="icon">📚</span>Your Library
+            </a>
+          </li>
+          <li>
+            <a href="#playlists" class="nav-link">
+              <span class="icon">🎶</span>Playlists
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+
     <button class="sidebar-open" id="sidebarOpen">☰</button>
-    <div class="content" id="content">
-        <!-- Content will be dynamically loaded here -->
-    </div>
+    <div class="content" id="content"></div>
 
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const sidebarClose = document.getElementById('sidebarClose');
-        const sidebarOpen = document.getElementById('sidebarOpen');
-        const links = document.querySelectorAll('.nav-link');
-        const content = document.getElementById('content');
+      const sidebar = document.getElementById("sidebar");
+      const sidebarClose = document.getElementById("sidebarClose");
+      const sidebarOpen = document.getElementById("sidebarOpen");
+      const links = document.querySelectorAll(".nav-link, .nav-btn");
+      const content = document.getElementById("content");
 
-        sidebarClose.addEventListener('click', () => {
-            sidebar.classList.add('collapsed');
+      // Content for each page
+      const pages = {
+        "for-you": `
+          <main>
+  <section class="bg-gray-100 py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4">Discover New Music</h1>
+      <p class="text-gray-600 mb-8">Explore a wide range of musical genres and artists.</p>
+      <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded">Browse Music</a>
+    </div>
+  </section>
+  <section class="py-20">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Featured Artists</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img src="/api/placeholder/400/320" alt="Artist 1" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Artist 1</h3>
+            <p class="text-gray-600 mb-4">Genre: Pop</p>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Listen Now</a>
+          </div>
+        </div>
+        <!-- Additional artist cards -->
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Music Website. All rights reserved.</p>
+    </div>
+  </footer>
+        `,
+        "live-radio": `
+          <h1>Live Radio</h1>
+          <div class="music-card">
+            <span class="music-icon">📻</span>
+            <div class="music-info">
+              <h3>Top Radio Stations</h3>
+              <p>Listen to live radio stations from around the world.</p>
+            </div>
+          </div>
+        `,
+        about: `
+          <h1>About Us</h1>
+          <p>WaveWire Radio is your ultimate destination for music streaming and discovery.</p>
+        `,
+        "how-to-use": `
+          <h1>How To Use</h1>
+          <p>Learn how to make the most of WaveWire Radio's features and capabilities.</p>
+        `,
+        support: `
+          <h1>Support Us</h1>
+          <p>Help us keep the music playing by supporting WaveWire Radio.</p>
+        `,
+        podcasts: `
+          <h1>Podcasts</h1>
+          <p>Discover and listen to your favorite podcasts.</p>
+        `,
+        "artist-radio": `
+          <h1>Artist Radio</h1>
+          <p>Radio stations based on your favorite artists.</p>
+        `,
+        news: `
+          <h1>News</h1>
+          <p>Stay updated with the latest music news and trends.</p>
+        `,
+        "your-library": `
+          <h1>Your Library</h1>
+          <p>Access your saved songs, albums, and playlists.</p>
+        `,
+        playlists: `
+          <h1>Playlists</h1>
+          <p>Create and manage your music playlists.</p>
+          
+        `,
+        "events-concerts": `
+          <h1>Events and Concerts</h1>
+          <p>Find upcoming music events and concerts near you.</p>
+        `,
+        "vinyl-merch": `
+          <h1>Vinyl Records & Merchandise</h1>
+          <div class="merch-grid">
+            <div class="merch-card">
+              <div class="merch-image">💿</div>
+              <div class="merch-info">
+                <h3>Steve Lacy - Gemini Rights</h3>
+                <p>Limited Edition Vinyl</p>
+                <div class="merch-price">$24.99</div>
+                <button class="merch-button">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="merch-card">
+              <div class="merch-image">👕</div>
+              <div class="merch-info">
+                <h3>WaveWire Classic Tee</h3>
+                <p>100% Cotton, Unisex</p>
+                <div class="merch-price">$19.99</div>
+                <button class="merch-button">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="merch-card">
+              <div class="merch-image">🧢</div>
+              <div class="merch-info">
+                <h3>WaveWire Snapback</h3>
+                <p>Adjustable Size, Black</p>
+                <div class="merch-price">$15.99</div>
+                <button class="merch-button">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="merch-card">
+              <div class="merch-image">💿</div>
+              <div class="merch-info">
+                <h3>JVKE - Complete Collection</h3>
+                <p>Special Edition Vinyl Box Set</p>
+                <div class="merch-price">$49.99</div>
+                <button class="merch-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `,
+        "live-shows": `
+          <h1>Live Shows & Streams</h1>
+          <div class="tabs">
+            <button class="tab active" onclick="showTab('live-streams')">Live Streams</button>
+            <button class="tab" onclick="showTab('upcoming-shows')">Upcoming Shows</button>
+          </div>
+
+          <div id="live-streams-content">
+            <div class="live-grid">
+              <div class="live-show-card">
+                <div class="live-banner">LIVE NOW</div>
+                <div class="live-thumbnail">🎸</div>
+                <div class="live-content">
+                  <h3>Steve Lacy - Live Studio Session</h3>
+                  <div class="live-meta">
+                    <div class="viewer-count">
+                      <span>👥</span>
+                      <span>24.8K watching</span>
+                    </div>
+                    <span>🎵 Pop/R&B</span>
+                  </div>
+                  <div class="live-cta">
+                    <button class="live-button watch-button">Watch Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="live-show-card">
+                <div class="live-thumbnail">🎤</div>
+                <div class="live-content">
+                  <h3>JVKE - Acoustic Performance</h3>
+                  <div class="live-meta">
+                    <span>🗓️ Starting in 2 hours</span>
+                    <span>🎵 Pop</span>
+                  </div>
+                  <div class="live-cta">
+                    <button class="live-button remind-button">Set Reminder</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="live-show-card">
+                <div class="live-banner">LIVE NOW</div>
+                <div class="live-thumbnail">🎹</div>
+                <div class="live-content">
+                  <h3>Chappell Roan - New Album Preview</h3>
+                  <div class="live-meta">
+                    <div class="viewer-count">
+                      <span>👥</span>
+                      <span>18.3K watching</span>
+                    </div>
+                    <span>🎵 Indie Pop</span>
+                  </div>
+                  <div class="live-cta">
+                    <button class="live-button watch-button">Watch Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="upcoming-shows-content" style="display: none;">
+            <div class="event-list">
+              <div class="event-card">
+                <div class="event-date">
+                  <div class="event-date-day">15</div>
+                  <div>NOV</div>
+                </div>
+                <div class="event-details">
+                  <h3>Steve Lacy - Gemini Rights Tour</h3>
+                  <div class="event-venue">Madison Square Garden, New York</div>
+                  <div>🎟️ Tickets from $59.99</div>
+                </div>
+                <button class="ticket-button">Get Tickets</button>
+              </div>
+
+              <div class="event-card">
+                <div class="event-date">
+                  <div class="event-date-day">22</div>
+                  <div>NOV</div>
+                </div>
+                <div class="event-details">
+                  <h3>JVKE - World Tour</h3>
+                  <div class="event-venue">O2 Arena, London</div>
+                  <div>🎟️ Tickets from $49.99</div>
+                </div>
+                <button class="ticket-button">Get Tickets</button>
+              </div>
+
+              <div class="event-card">
+                <div class="event-date">
+                  <div class="event-date-day">29</div>
+                  <div>NOV</div>
+                </div>
+                <div class="event-details">
+                  <h3>Chappell Roan - Album Release Show</h3>
+                  <div class="event-venue">The Wiltern, Los Angeles</div>
+                  <div>🎟️ Tickets from $39.99</div>
+                </div>
+                <button class="ticket-button">Get Tickets</button>
+              </div>
+            </div>
+          </div>
+        `,
+      };
+
+      // Load content based on page ID
+      function loadContent(pageId) {
+        const cleanPageId = pageId.replace("#", "");
+        content.innerHTML = pages[cleanPageId] || "<h1>Page Not Found</h1>";
+
+        // Update active states
+        links.forEach((link) => {
+          const linkPageId = link.getAttribute("href").substring(1);
+          link.classList.toggle("active", linkPageId === cleanPageId);
         });
+      }
 
-        sidebarOpen.addEventListener('click', () => {
-            sidebar.classList.remove('collapsed');
+      // Event listener for all navigation links
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pageId = e.currentTarget.getAttribute("href").substring(1);
+          loadContent(pageId);
+
+          if (window.innerWidth <= 768) {
+            sidebar.classList.add("collapsed");
+          }
         });
+      });
 
-        const pages = {
-            'for-you': '<h1>For You</h1><p>Personalized music recommendations just for you.</p>',
-            'live-radio': '<h1>Live Radio</h1><p>Listen to live radio stations from around the world.</p>',
-            'podcasts': '<h1>Podcasts</h1><p>Discover and listen to your favorite podcasts.</p>',
-            'artist-radio': '<h1>Artist Radio</h1><p>Radio stations based on your favorite artists.</p>',
-            'news': '<h1>News</h1><p>Stay updated with the latest music news and trends.</p>',
-            'your-library': '<h1>Your Library</h1><p>Access your saved songs, albums, and playlists.</p>',
-            'playlists': '<h1>Playlists</h1><p>Create and manage your music playlists.</p>',
-            'events-concerts': '<h1>Events and Concerts</h1><p>Find upcoming music events and concerts near you.</p>'
-        };
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pageId = e.currentTarget.getAttribute("href").substring(1);
+          loadContent(pageId);
 
-        function loadContent(pageId) {
-            content.innerHTML = pages[pageId] || '<h1>Page Not Found</h1>';
-        }
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = e.currentTarget.getAttribute('href').substring(1);
-                loadContent(pageId);
-                links.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                if (window.innerWidth <= 768) {
-                    sidebar.classList.add('collapsed');
-                }
-            });
+          if (window.innerWidth <= 768) {
+            sidebar.classList.add("collapsed");
+          }
         });
+      });
 
-        // Load default page
-        loadContent('for-you');
+      // Close sidebar
+      sidebarClose.addEventListener("click", () => {
+        sidebar.classList.add("collapsed");
+      });
+
+      // Open sidebar
+      sidebarOpen.addEventListener("click", () => {
+        sidebar.classList.remove("collapsed");
+      });
+
+      // Load default page
+      loadContent("for-you");
     </script>
-</body>
+  </body>
 </html>
