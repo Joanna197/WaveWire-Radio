@@ -32,7 +32,7 @@
       }
 
       .nav-btn.active {
-        background: #555;
+        background: #4e4977;
         border-radius: 4px;
       }
 
@@ -81,7 +81,7 @@
       }
 
       .nav-link.active {
-        background: #e0e0e0;
+        background: #4e4977;
         border-radius: 4px;
       }
 
