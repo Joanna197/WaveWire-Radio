@@ -95,37 +95,119 @@
       // Content for each page
       const pages = {
         "for-you": `
-          <main>
-  <section class="bg-gray-100 py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold mb-4">Discover New Music</h1>
-      <p class="text-gray-600 mb-8">Explore a wide range of musical genres and artists.</p>
-      <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded">Browse Music</a>
-    </div>
-  </section>
-  <section class="py-20">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8">Featured Artists</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <img src="/api/placeholder/400/320" alt="Artist 1" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Artist 1</h3>
-            <p class="text-gray-600 mb-4">Genre: Pop</p>
-            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Listen Now</a>
-          </div>
-        </div>
-        <!-- Additional artist cards -->
+  <div class="home-container">
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1>Discover Your Next Favorite Artist</h1>
+        <p class="hero-subtitle">Stream unlimited music, live shows, and podcasts</p>
+        <button class="primary-btn">Start Listening</button>
       </div>
     </div>
-  </section>
-</main>
-<footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Music Website. All rights reserved.</p>
+
+    <div class="featured-section">
+      <h2>Featured Artists</h2>
+      <div class="featured-grid">
+        <div class="artist-card">
+          <img src="images/steve.jpeg" alt="Steve Lacy" class="artist-image">
+          <div class="artist-info">
+            <div>
+              <h3>Steve Lacy</h3>
+              <p>Pop/R&B</p>
+              <div class="artist-stats">
+                <span>🎵 2.5M monthly listeners</span>
+              </div>
+            </div>
+            <button class="secondary-btn">Listen Now</button>
+          </div>
+        </div>
+
+        <div class="artist-card">
+          <img src="images/chappell.jpg" alt="Chappell Roan" class="artist-image">
+          <div class="artist-info">
+            <div>
+              <h3>Chappell Roan</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1.8M monthly listeners</span>
+              </div>
+            </div>
+            <button class="secondary-btn">Listen Now</button>
+          </div>
+        </div>
+
+        <div class="artist-card">
+          <img src="images/jvke.jpg" alt="JVKE" class="artist-image">
+          <div class="artist-info">
+            <div>
+              <h3>JVKE</h3>
+              <p>Pop</p>
+              <div class="artist-stats">
+                <span>🎵 3.2M monthly listeners</span>
+              </div>
+            </div>
+            <button class="secondary-btn">Listen Now</button>
+          </div>
+        </div>
+        <div class="artist-card">
+          <img src="images/conan.jpg" alt="Conan Gray" class="artist-image">
+          <div class="artist-info">
+            <div>
+              <h3>Conan Gray</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1.8M monthly listeners</span>
+              </div>
+            </div>
+            <button class="secondary-btn">Listen Now</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
-        `,
+
+    <div class="trending-section">
+      <h2>Trending Now</h2>
+      <div class="trending-grid">
+        <div class="trending-card">
+          <span class="trending-number">1</span>
+          <img src="images/Gemini.jpeg" alt="Top Song" class="trending-image">
+          <div class="trending-info">
+            <h4>Bad Habit</h4>
+            <p>Steve Lacy</p>
+            <span class="trending-plays">2.1M plays today</span>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+
+        <div class="trending-card">
+          <span class="trending-number">2</span>
+          <img src="images/goldenhour.jpg" alt="Second Song" class="trending-image">
+          <div class="trending-info">
+            <h4>Golden Hour</h4>
+            <p>JVKE</p>
+            <span class="trending-plays">1.8M plays today</span>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+
+        <div class="trending-card">
+          <span class="trending-number">3</span>
+          <img src="images/pinkpony.jpg" alt="Third Song" class="trending-image">
+          <div class="trending-info">
+            <h4>Pink Pony Club</h4>
+            <p>Chappell Roan</p>
+            <span class="trending-plays">1.5M plays today</span>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Ready to Start Listening?</h2>
+      <p>Join millions of music lovers on WaveWire Radio</p>
+      <button class="primary-btn">Create Free Account</button>
+    </div>
+  </div> `,
         "live-radio": `
           <h1>Live Radio</h1>
           <div class="music-card">
@@ -139,10 +221,6 @@
         about: `
           <h1>About Us</h1>
           <p>WaveWire Radio is your ultimate destination for music streaming and discovery.</p>
-        `,
-        "how-to-use": `
-          <h1>How To Use</h1>
-          <p>Learn how to make the most of WaveWire Radio's features and capabilities.</p>
         `,
         support: `
           <h1>Support Us</h1>
