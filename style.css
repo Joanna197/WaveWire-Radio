@@ -476,3 +476,165 @@
   }
 }
 
+.artist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.artist-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.featured-section {
+  padding: 2rem;
+  background-color: #17162eff;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spotify-card {
+  background: #2a2747ff;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.spotify-card:hover {
+  transform: translateY(-5px);
+}
+
+.spotify-card iframe {
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .featured-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+  }
+  
+  .spotify-card {
+      margin: 0.5rem;
+  }
+}
+
+
+
+.trending-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.song-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.song-card:hover {
+  background: #f0f1f2;
+}
+
+.song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.play-icon {
+  width: 40px;
+  height: 40px;
+  color: #4a90e2;
+}
+
+.song-details h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.song-details p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.song-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.streams {
+  color: #666;
+}
+
+.trend-up {
+  color: #34c759;
+}
+
+.spotify-embed {
+  display: none;
+  margin-top: 1rem;
+}
+
+.spotify-embed.active {
+  display: block;
+}
+
+
+.trending-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+
+.trending-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
+
