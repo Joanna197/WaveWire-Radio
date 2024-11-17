@@ -82,8 +82,264 @@
       </div>
     </div>
 
-    <button class="sidebar-open" id="sidebarOpen">☰</button>
-    <div class="content" id="content"></div>
+    <div class="content" id="content">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1>Discover Your Next Favorite Artist</h1>
+          <p class="hero-subtitle">
+            Stream unlimited music, live shows, and podcasts
+          </p>
+          <button class="primary-btn">Start Listening</button>
+        </div>
+      </div>
+
+      <!-- Featured Artists Section -->
+      <div class="featured-section">
+        <h2>Featured Artists</h2>
+        <div class="featured-grid">
+          <!-- Steve Lacy -->
+          <div class="artist-card" data-spotify-id="57vWImR43h4CaDao012Ofp">
+            <img
+              src="images/steve.jpeg"
+              alt="Steve Lacy"
+              class="artist-image"
+            />
+            <div class="artist-info">
+              <h3>Steve Lacy</h3>
+              <p>Pop/R&B</p>
+              <div class="artist-stats">
+                <span>🎵 2.5M monthly listeners</span>
+              </div>
+              <button
+                class="secondary-btn"
+                onclick="showArtistEmbed('57vWImR43h4CaDao012Ofp')"
+              >
+                Listen Now
+              </button>
+            </div>
+            <div class="spotify-embed-container" style="display: none">
+              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
+                ×
+              </button>
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/album/3Ks0eeH0GWpY4AU20D5HPD?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Chappell Roan -->
+          <div class="artist-card" data-spotify-id="3rQI18thJqWxAOUQwGCtD9">
+            <img
+              src="images/chappell.jpg"
+              alt="Chappell Roan"
+              class="artist-image"
+            />
+            <div class="artist-info">
+              <h3>Chappell Roan</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1.8M monthly listeners</span>
+              </div>
+              <button
+                class="secondary-btn"
+                onclick="showArtistEmbed('3rQI18thJqWxAOUQwGCtD9')"
+              >
+                Listen Now
+              </button>
+            </div>
+            <div class="spotify-embed-container" style="display: none">
+              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
+                ×
+              </button>
+              <iframe
+                src="https://open.spotify.com/embed/artist/3rQI18thJqWxAOUQwGCtD9"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- JVKE -->
+          <div class="artist-card" data-spotify-id="164Uj4eKjl6zTBKfJLFKKK">
+            <img src="images/jvke.jpg" alt="JVKE" class="artist-image" />
+            <div class="artist-info">
+              <h3>JVKE</h3>
+              <p>Pop</p>
+              <div class="artist-stats">
+                <span>🎵 3.2M monthly listeners</span>
+              </div>
+              <button
+                class="secondary-btn"
+                onclick="showArtistEmbed('164Uj4eKjl6zTBKfJLFKKK')"
+              >
+                Listen Now
+              </button>
+            </div>
+            <div class="spotify-embed-container" style="display: none">
+              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
+                ×
+              </button>
+              <iframe
+                src="https://open.spotify.com/embed/artist/164Uj4eKjl6zTBKfJLFKKK"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Conan Gray -->
+          <div class="artist-card" data-spotify-id="4Uc8Dsxct0oMqx0P6i60ea">
+            <img src="images/conan.jpg" alt="Conan Gray" class="artist-image" />
+            <div class="artist-info">
+              <h3>Conan Gray</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1.8M monthly listeners</span>
+              </div>
+              <button
+                class="secondary-btn"
+                onclick="showArtistEmbed('4Uc8Dsxct0oMqx0P6i60ea')"
+              >
+                Listen Now
+              </button>
+            </div>
+            <div class="spotify-embed-container" style="display: none">
+              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
+                ×
+              </button>
+              <iframe
+                src="https://open.spotify.com/embed/artist/4Uc8Dsxct0oMqx0P6i60ea"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <div class="featured-section">
+            <section class="trending-section">
+              <div class="trending-header">
+                <svg
+                  class="play-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <h2 class="trending-title">Trending Now</h2>
+              </div>
+        
+              <div class="song-list">
+                <!-- Steve Lacy -->
+                <div class="song-card" onclick="toggleEmbed('song1')">
+                  <div class="song-header">
+                    <div class="song-info">
+                      <svg
+                        class="play-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                      </svg>
+                      <div class="song-details">
+                        <h3>Bad Habit</h3>
+                        <p>Steve Lacy</p>
+                      </div>
+                    </div>
+                    <div class="song-stats">
+                      <span class="streams">892M streams</span>
+                      <span class="trend-up">+12%</span>
+                    </div>
+                  </div>
+                  <div id="song1" class="spotify-embed">
+                    <iframe
+                      src="https://open.spotify.com/embed/track/4k6Uh1HXdhtusDW5y8Gbvy"
+                      width="100%"
+                      height="352"
+                      frameborder="0"
+                      allowtransparency="true"
+                      allow="encrypted-media"
+                      loading="lazy"
+                    >
+                    </iframe>
+                  </div>
+                </div>
+        
+                <!-- Chappell Roan -->
+                <div class="song-card" onclick="toggleEmbed('song2')">
+                  <div class="song-header">
+                    <div class="song-info">
+                      <svg
+                        class="play-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                      </svg>
+                      <div class="song-details">
+                        <h3>Pink Pony Club</h3>
+                        <p>Chappell Roan</p>
+                      </div>
+                    </div>
+                    <div class="song-stats">
+                      <span class="streams">456M streams</span>
+                      <span class="trend-up">+28%</span>
+                    </div>
+                  </div>
+                  <div id="song2" class="spotify-embed">
+                    <iframe
+                      src="https://open.spotify.com/embed/track/4YaRdC3WBJzBUdwGDXoMzu"
+                      width="100%"
+                      height="352"
+                      frameborder="0"
+                      allowtransparency="true"
+                      allow="encrypted-media"
+                      loading="lazy"
+                    >
+                    </iframe>
+                  </div>
+                </div>
+                </div>
+        
+        </div>
+      </div>
+    </div>
+
+    
+        <!-- Add more song cards as needed -->
+      </div>
+    </section>
 
     <script>
       const sidebar = document.getElementById("sidebar");
@@ -107,7 +363,7 @@
     <div class="featured-section">
       <h2>Featured Artists</h2>
       <div class="featured-grid">
-        <div class="artist-card">
+        <div class="artist-card" data-spotify-id="57vWImR43h4CaDao012Ofp">
           <img src="images/steve.jpeg" alt="Steve Lacy" class="artist-image">
           <div class="artist-info">
             <div>
@@ -117,11 +373,23 @@
                 <span>🎵 2.5M monthly listeners</span>
               </div>
             </div>
-            <button class="secondary-btn">Listen Now</button>
+            <button class="secondary-btn" onclick="showArtistEmbed('57vWImR43h4CaDao012Ofp')">Listen Now</button>
+          </div>
+          <div class="spotify-embed-container" style="display: none;">
+            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
+            <iframe 
+              src="https://open.spotify.com/embed/artist/57vWImR43h4CaDao012Ofp" 
+              width="100%" 
+              height="352" 
+              frameborder="0" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+              loading="lazy">
+            </iframe>
           </div>
         </div>
 
-        <div class="artist-card">
+        <div class="artist-card" data-spotify-id="3rQI18thJqWxAOUQwGCtD9">
           <img src="images/chappell.jpg" alt="Chappell Roan" class="artist-image">
           <div class="artist-info">
             <div>
@@ -131,11 +399,23 @@
                 <span>🎵 1.8M monthly listeners</span>
               </div>
             </div>
-            <button class="secondary-btn">Listen Now</button>
+            <button class="secondary-btn" onclick="showArtistEmbed('3rQI18thJqWxAOUQwGCtD9')">Listen Now</button>
+          </div>
+          <div class="spotify-embed-container" style="display: none;">
+            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
+            <iframe 
+              src="https://open.spotify.com/embed/artist/3rQI18thJqWxAOUQwGCtD9" 
+              width="100%" 
+              height="352" 
+              frameborder="0" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+              loading="lazy">
+            </iframe>
           </div>
         </div>
 
-        <div class="artist-card">
+        <div class="artist-card" data-spotify-id="164Uj4eKjl6zTBKfJLFKKK">
           <img src="images/jvke.jpg" alt="JVKE" class="artist-image">
           <div class="artist-info">
             <div>
@@ -145,10 +425,23 @@
                 <span>🎵 3.2M monthly listeners</span>
               </div>
             </div>
-            <button class="secondary-btn">Listen Now</button>
+            <button class="secondary-btn" onclick="showArtistEmbed('164Uj4eKjl6zTBKfJLFKKK')">Listen Now</button>
+          </div>
+          <div class="spotify-embed-container" style="display: none;">
+            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
+            <iframe 
+              src="https://open.spotify.com/embed/artist/164Uj4eKjl6zTBKfJLFKKK" 
+              width="100%" 
+              height="352" 
+              frameborder="0" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+              loading="lazy">
+            </iframe>
           </div>
         </div>
-        <div class="artist-card">
+
+        <div class="artist-card" data-spotify-id="4Uc8Dsxct0oMqx0P6i60ea">
           <img src="images/conan.jpg" alt="Conan Gray" class="artist-image">
           <div class="artist-info">
             <div>
@@ -158,56 +451,23 @@
                 <span>🎵 1.8M monthly listeners</span>
               </div>
             </div>
-            <button class="secondary-btn">Listen Now</button>
+            <button class="secondary-btn" onclick="showArtistEmbed('4Uc8Dsxct0oMqx0P6i60ea')">Listen Now</button>
+          </div>
+          <div class="spotify-embed-container" style="display: none;">
+            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
+            <iframe 
+              src="https://open.spotify.com/embed/artist/4Uc8Dsxct0oMqx0P6i60ea" 
+              width="100%" 
+              height="352" 
+              frameborder="0" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+              loading="lazy">
+            </iframe>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="trending-section">
-      <h2>Trending Now</h2>
-      <div class="trending-grid">
-        <div class="trending-card">
-          <span class="trending-number">1</span>
-          <img src="images/Gemini.jpeg" alt="Top Song" class="trending-image">
-          <div class="trending-info">
-            <h4>Bad Habit</h4>
-            <p>Steve Lacy</p>
-            <span class="trending-plays">2.1M plays today</span>
-          </div>
-          <button class="play-btn">▶️</button>
-        </div>
-
-        <div class="trending-card">
-          <span class="trending-number">2</span>
-          <img src="images/goldenhour.jpg" alt="Second Song" class="trending-image">
-          <div class="trending-info">
-            <h4>Golden Hour</h4>
-            <p>JVKE</p>
-            <span class="trending-plays">1.8M plays today</span>
-          </div>
-          <button class="play-btn">▶️</button>
-        </div>
-
-        <div class="trending-card">
-          <span class="trending-number">3</span>
-          <img src="images/pinkpony.jpg" alt="Third Song" class="trending-image">
-          <div class="trending-info">
-            <h4>Pink Pony Club</h4>
-            <p>Chappell Roan</p>
-            <span class="trending-plays">1.5M plays today</span>
-          </div>
-          <button class="play-btn">▶️</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-section">
-      <h2>Ready to Start Listening?</h2>
-      <p>Join millions of music lovers on WaveWire Radio</p>
-      <button class="primary-btn">Create Free Account</button>
-    </div>
-  </div> `,
+    </div> `,
         "live-radio": `
           <h1>Live Radio</h1>
           <div class="music-card">
@@ -401,6 +661,48 @@
         `,
       };
 
+      function showArtistEmbed(spotifyId) {
+        // Hide all embed containers first
+        const containers = document.querySelectorAll(
+          ".spotify-embed-container"
+        );
+        containers.forEach((container) => (container.style.display = "none"));
+
+        // Show the selected artist's embed container
+        const artistCard = document.querySelector(
+          `[data-spotify-id="${spotifyId}"]`
+        );
+        const embedContainer = artistCard.querySelector(
+          ".spotify-embed-container"
+        );
+        embedContainer.style.display = "block";
+
+        // Scroll the embed into view
+        embedContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function closeArtistEmbed(button) {
+        const container = button.closest(".spotify-embed-container");
+        container.style.display = "none";
+      }
+
+
+      function toggleEmbed(songId) {
+      const embed = document.getElementById(songId);
+      const allEmbeds = document.querySelectorAll('.spotify-embed');
+      
+      // Close all other embeds
+      allEmbeds.forEach(el => {
+        if (el.id !== songId) {
+          el.classList.remove('active');
+        }
+      });
+      
+      // Toggle current embed
+      embed.classList.toggle('active');
+    }
+
+
       // Load content based on page ID
       function loadContent(pageId) {
         const cleanPageId = pageId.replace("#", "");
@@ -447,6 +749,51 @@
       sidebarOpen.addEventListener("click", () => {
         sidebar.classList.remove("collapsed");
       });
+
+
+function initTrendingSection() {
+    // Get all song cards
+    const songCards = document.querySelectorAll('.song-card');
+    
+    // Get the active song ID from localStorage (if any)
+    const activeId = localStorage.getItem('activeSongId');
+    
+    // If there was an active song, show it
+    if (activeId) {
+        const activeEmbed = document.querySelector(`#embed-${activeId}`);
+        if (activeEmbed) {
+            activeEmbed.classList.add('active');
+        }
+    }
+    
+    // Add click handlers to all song cards
+    songCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            const songId = this.dataset.songId;
+            const embed = document.querySelector(`#embed-${songId}`);
+            
+            // If clicking the same song, toggle it off
+            if (embed.classList.contains('active')) {
+                embed.classList.remove('active');
+                localStorage.removeItem('activeSongId');
+            } else {
+                // Hide all embeds first
+                document.querySelectorAll('.spotify-embed').forEach(embed => {
+                    embed.classList.remove('active');
+                });
+                
+                // Show the clicked song's embed
+                embed.classList.add('active');
+                localStorage.setItem('activeSongId', songId);
+            }
+        });
+    });
+}
+
+// Initialize when the page loads
+document.addEventListener('DOMContentLoaded', initTrendingSection);
+
+
 
       // Load default page
       loadContent("for-you");
