@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .cart-item {
+      background-color: #fff;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item button {
+      background-color: #ff5c5c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-item button:hover {
+      background-color: #ff3333;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-items" id="cartItems"></div>
+  </div>
+
+  <script>
+    // Get cart items from localStorage
+    function getCartData() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      return cart;
+    }
+
+    // Display cart items
+    function displayCartItems() {
+      const cart = getCartData();
+      const cartItemsContainer = document.getElementById('cartItems');
+      
+      cartItemsContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+      } else {
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>$${item.price}</p>
+            <button onclick="removeFromCart(${index})">Remove</button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+      }
+    }
+
+    // Remove an item from the cart
+    function removeFromCart(index) {
+      let cart = getCartData();
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+      updateCartCount();
+    }
+
+    // Update cart count on the main page
+    function updateCartCount() {
+      let cart = getCartData();
+      const cartCount = document.getElementById('cartCount');
+      cartCount.textContent = cart.length;
+    }
+
+    // On page load, display the cart items
+    window.onload = displayCartItems;
+  </script>
+</body>
+</html>
