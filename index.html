@@ -1,89 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaveWire Radio</title>
-    <link href="style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="header">
-      <div class="logo">🎵WaveWire Radio</div>
-      <nav class="nav">
-        <a href="#for-you" class="nav-btn active">Home</a>
-        <a href="#about" class="nav-btn">About Us</a>
-        <a href="#events-concerts" class="nav-btn">Events</a>
-        <a href="#news" class="nav-btn">News</a>
-        <a href="#live-shows" class="nav-btn">Live Shows</a>
-        <a href="#vinyl-merch" class="nav-btn">Vinyl & Merch</a>
-        <a href="#support" class="donate-btn">Support Us!</a>
-      </nav>
-    </div>
 
-    <div class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h2 style="margin: 0">WaveWire Radio</h2>
-        <button
-          class="sidebar-close"
-          id="sidebarClose"
-          aria-label="Close sidebar"
-        >
-          ×
-        </button>
-      </div>
-      <div class="sidebar-content">
-        <ul style="list-style: none; padding: 0; margin: 0">
-          <li>
-            <a href="#for-you" class="nav-link active">
-              <span class="icon">🏠</span>For You
-            </a>
-          </li>
-          <li>
-            <a href="#live-shows" class="nav-link">
-              <span class="icon">🎥</span>Live Shows
-            </a>
-          </li>
-          <li>
-            <a href="#vinyl-merch" class="nav-link">
-              <span class="icon">💿</span>Vinyl & Merch
-            </a>
-          </li>
-          <li>
-            <a href="#live-radio" class="nav-link">
-              <span class="icon">📻</span>Live Radio
-            </a>
-          </li>
-          <li>
-            <a href="#podcasts" class="nav-link">
-              <span class="icon">🎙️</span>Podcasts
-            </a>
-          </li>
-          <li>
-            <a href="#artist-radio" class="nav-link">
-              <span class="icon">🎸</span>Artist Radio
-            </a>
-          </li>
-          <li>
-            <a href="#news" class="nav-link">
-              <span class="icon">📰</span>News
-            </a>
-          </li>
-          <li>
-            <a href="#your-library" class="nav-link">
-              <span class="icon">📚</span>Your Library
-            </a>
-          </li>
-          <li>
-            <a href="#playlists" class="nav-link">
-              <span class="icon">🎶</span>Playlists
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaveWire Radio</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
 
-    <div class="content" id="content">
-      <!-- Hero Section -->
+<body>
+  <div class="header">
+    <div class="logo">🎵WaveWire Radio</div>
+    <nav class="nav">
+      <span class="nav-btn active" data-page="home">Home</span>
+      <span class="nav-btn" data-page="about">About Us</span>
+      <span class="nav-btn" data-page="news">News</span>
+      <span class="nav-btn" data-page="live-shows">Live Shows</span>
+      <span class="nav-btn" data-page="shop">Vinyl & Merch</span>
+      <span class="donate-btn" data-page="support">Support Us!</span>
+    </nav>
+  </div>
+
+
+  <!-- Home Page -->
+  <section id="home" class="page-section active">
+    <main>
       <div class="hero-section">
         <div class="hero-content">
           <h1>Discover Your Next Favorite Artist</h1>
@@ -94,709 +35,763 @@
         </div>
       </div>
 
+
       <!-- Featured Artists Section -->
       <div class="featured-section">
         <h2>Featured Artists</h2>
-        <div class="featured-grid">
-          <!-- Steve Lacy -->
-          <div class="artist-card" data-spotify-id="57vWImR43h4CaDao012Ofp">
-            <img
-              src="images/steve.jpeg"
-              alt="Steve Lacy"
-              class="artist-image"
-            />
+        <div id="artist-container">
+          <div class="artist-card" data-artist-id="65574">
             <div class="artist-info">
+              <img src="https://api.deezer.com/artist/65574/image" alt="Steve Lacy" class="artist-image">
               <h3>Steve Lacy</h3>
               <p>Pop/R&B</p>
               <div class="artist-stats">
                 <span>🎵 2.5M monthly listeners</span>
               </div>
-              <button
-                class="secondary-btn"
-                onclick="showArtistEmbed('57vWImR43h4CaDao012Ofp')"
-              >
+              <button class="secondary-btn" onclick="showArtistEmbed('65574')">
                 Listen Now
               </button>
-            </div>
-            <div class="spotify-embed-container" style="display: none">
-              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
-                ×
-              </button>
-              <iframe
-                style="border-radius: 12px"
-                src="https://open.spotify.com/embed/album/3Ks0eeH0GWpY4AU20D5HPD?utm_source=generator"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/light/artist/65574/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
             </div>
           </div>
 
-          <!-- Chappell Roan -->
-          <div class="artist-card" data-spotify-id="3rQI18thJqWxAOUQwGCtD9">
-            <img
-              src="images/chappell.jpg"
-              alt="Chappell Roan"
-              class="artist-image"
-            />
-            <div class="artist-info">
-              <h3>Chappell Roan</h3>
-              <p>Indie Pop</p>
-              <div class="artist-stats">
-                <span>🎵 1.8M monthly listeners</span>
-              </div>
-              <button
-                class="secondary-btn"
-                onclick="showArtistEmbed('3rQI18thJqWxAOUQwGCtD9')"
-              >
-                Listen Now
-              </button>
-            </div>
-            <div class="spotify-embed-container" style="display: none">
-              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
-                ×
-              </button>
-              <iframe
-                src="https://open.spotify.com/embed/artist/3rQI18thJqWxAOUQwGCtD9"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-                loading="lazy"
-              >
-              </iframe>
-            </div>
-          </div>
 
-          <!-- JVKE -->
-          <div class="artist-card" data-spotify-id="164Uj4eKjl6zTBKfJLFKKK">
-            <img src="images/jvke.jpg" alt="JVKE" class="artist-image" />
-            <div class="artist-info">
-              <h3>JVKE</h3>
-              <p>Pop</p>
-              <div class="artist-stats">
-                <span>🎵 3.2M monthly listeners</span>
+          <div id="artist-container">
+            <div class="artist-card" data-artist-id="12945219">
+              <div class="artist-info">
+                <img src="https://api.deezer.com/artist/12945219/image" alt="Steve Lacy" class="artist-image">
+                <h3>Chappell Roan</h3>
+                <p>Indie Pop</p>
+                <div class="artist-stats">
+                  <span>🎵 1.8M monthly listeners</span>
+                </div>
+                <button class="secondary-btn" onclick="showArtistEmbed('12945219')">
+                  Listen Now
+                </button>
+                <div class="spotify-embed-container" style="display: none">
+                  <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                  <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/12945219/top_tracks"
+                    width="100%" height="300" frameborder="0" allowtransparency="true"
+                    allow="encrypted-media; clipboard-write"></iframe>
+                </div>
               </div>
-              <button
-                class="secondary-btn"
-                onclick="showArtistEmbed('164Uj4eKjl6zTBKfJLFKKK')"
-              >
-                Listen Now
-              </button>
             </div>
-            <div class="spotify-embed-container" style="display: none">
-              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
-                ×
-              </button>
-              <iframe
-                src="https://open.spotify.com/embed/artist/164Uj4eKjl6zTBKfJLFKKK"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-                loading="lazy"
-              >
-              </iframe>
-            </div>
-          </div>
 
-          <!-- Conan Gray -->
-          <div class="artist-card" data-spotify-id="4Uc8Dsxct0oMqx0P6i60ea">
-            <img src="images/conan.jpg" alt="Conan Gray" class="artist-image" />
-            <div class="artist-info">
-              <h3>Conan Gray</h3>
-              <p>Indie Pop</p>
-              <div class="artist-stats">
-                <span>🎵 1.8M monthly listeners</span>
-              </div>
-              <button
-                class="secondary-btn"
-                onclick="showArtistEmbed('4Uc8Dsxct0oMqx0P6i60ea')"
-              >
-                Listen Now
-              </button>
-            </div>
-            <div class="spotify-embed-container" style="display: none">
-              <button class="close-embed-btn" onclick="closeArtistEmbed(this)">
-                ×
-              </button>
-              <iframe
-                src="https://open.spotify.com/embed/artist/4Uc8Dsxct0oMqx0P6i60ea"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-                loading="lazy"
-              >
-              </iframe>
-            </div>
-          </div>
 
-          <div class="featured-section">
-            <section class="trending-section">
-              <div class="trending-header">
-                <svg
-                  class="play-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                  <polyline points="17 6 23 6 23 12"></polyline>
-                </svg>
-                <h2 class="trending-title">Trending Now</h2>
-              </div>
-        
-              <div class="song-list">
-                <!-- Steve Lacy -->
-                <div class="song-card" onclick="toggleEmbed('song1')">
-                  <div class="song-header">
-                    <div class="song-info">
-                      <svg
-                        class="play-icon"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                      </svg>
-                      <div class="song-details">
-                        <h3>Bad Habit</h3>
-                        <p>Steve Lacy</p>
-                      </div>
-                    </div>
-                    <div class="song-stats">
-                      <span class="streams">892M streams</span>
-                      <span class="trend-up">+12%</span>
-                    </div>
+            <div id="artist-container">
+              <div class="artist-card" data-artist-id="14486481">
+                <div class="artist-info">
+                  <img src="https://api.deezer.com/artist/14486481/image" alt="Steve Lacy" class="artist-image">
+                  <h3>JVKE</h3>
+                  <p>Pop</p>
+                  <div class="artist-stats">
+                    <span>🎵 3.2M monthly listeners</span>
                   </div>
-                  <div id="song1" class="spotify-embed">
-                    <iframe
-                      src="https://open.spotify.com/embed/track/4k6Uh1HXdhtusDW5y8Gbvy"
-                      width="100%"
-                      height="352"
-                      frameborder="0"
-                      allowtransparency="true"
-                      allow="encrypted-media"
-                      loading="lazy"
-                    >
-                    </iframe>
+
+                  <button class="secondary-btn" onclick="showArtistEmbed('14486481')">
+                    Listen Now
+                  </button>
+                  <div class="spotify-embed-container" style="display: none">
+                    <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                    <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/14486481/top_tracks"
+                      width="100%" height="300" frameborder="0" allowtransparency="true"
+                      allow="encrypted-media; clipboard-write"></iframe>
                   </div>
                 </div>
-        
-                <!-- Chappell Roan -->
-                <div class="song-card" onclick="toggleEmbed('song2')">
-                  <div class="song-header">
-                    <div class="song-info">
-                      <svg
-                        class="play-icon"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                      </svg>
-                      <div class="song-details">
-                        <h3>Pink Pony Club</h3>
-                        <p>Chappell Roan</p>
-                      </div>
+              </div>
+
+              <div id="artist-container">
+                <div class="artist-card" data-artist-id="1619572">
+                  <div class="artist-info">
+                    <img src="https://api.deezer.com/artist/1619572/image" alt="Steve Lacy" class="artist-image">
+                    <h3>Chappell Roan</h3>
+                    <p>Indie Pop</p>
+                    <div class="artist-stats">
+                      <span>🎵 1.8M monthly listeners</span>
                     </div>
-                    <div class="song-stats">
-                      <span class="streams">456M streams</span>
-                      <span class="trend-up">+28%</span>
+                    <button class="secondary-btn" onclick="showArtistEmbed('1619572')">
+                      Listen Now
+                    </button>
+                    <div class="spotify-embed-container" style="display: none">
+                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                      <iframe title="deezer-widget"
+                        src="https://widget.deezer.com/widget/dark/artist/1619572/top_tracks" width="100%" height="300"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
                     </div>
                   </div>
-                  <div id="song2" class="spotify-embed">
-                    <iframe
-                      src="https://open.spotify.com/embed/track/4YaRdC3WBJzBUdwGDXoMzu"
-                      width="100%"
-                      height="352"
-                      frameborder="0"
-                      allowtransparency="true"
-                      allow="encrypted-media"
-                      loading="lazy"
-                    >
-                    </iframe>
+                </div>
+              </div>
+
+
+              <div id="artist-container">
+                <div class="artist-card" data-artist-id="6630050">
+                  <div class="artist-info">
+                    <img src="https://api.deezer.com/artist/6630050/image" alt="Steve Lacy" class="artist-image">
+                    <h3>Chappell Roan</h3>
+                    <p>Indie Pop</p>
+                    <div class="artist-stats">
+                      <span>🎵 1.8M monthly listeners</span>
+                    </div>
+                    <button class="secondary-btn" onclick="showArtistEmbed('6630050')">
+                      Listen Now
+                    </button>
+                    <div class="spotify-embed-container" style="display: none">
+                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                      <iframe title="deezer-widget"
+                        src="https://widget.deezer.com/widget/dark/artist/6630050/top_tracks" width="100%" height="300"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+
+                    </div>
                   </div>
                 </div>
+              </div>
+
+              <div id="artist-container">
+                <div class="artist-card" data-artist-id="9541274">
+                  <div class="artist-info">
+                    <img src="https://api.deezer.com/artist/9541274/image" alt="Steve Lacy" class="artist-image">
+                    <h3>Chappell Roan</h3>
+                    <p>Indie Pop</p>
+                    <div class="artist-stats">
+                      <span>🎵 1.8M monthly listeners</span>
+                    </div>
+                    <button class="secondary-btn" onclick="showArtistEmbed('9541274')">
+                      Listen Now
+                    </button>
+                    <div class="spotify-embed-container" style="display: none">
+                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                      <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/9541274/top_tracks"
+                      width="100%" height="300" frameborder="0" allowtransparency="true"
+                      allow="encrypted-media; clipboard-write"></iframe>
+
+                    </div>
+                  </div>
                 </div>
-        
+              </div>
+
+             
+    </main>
+  </section>
+
+
+  <!-- About Page -->
+  <section id="about" class="page-section">
+    <div class="main-content">
+      <div class="about-section">
+        <section class="mission-section">
+          <div class="section-container">
+            <div class="mission-content">
+              <h2>Our Mission</h2>
+              <p>WaveWire Radio was born from a simple yet powerful idea: to create a space where independent music
+                could thrive and reach the audiences it deserves. We believe in the power of authentic voices and
+                original sounds to transform the musical landscape.</p>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">50k+</span>
+                <span class="stat-label">Monthly Listeners</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Featured Artists</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Live Shows</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- What We Do Section -->
+        <section class="what-we-do-section">
+          <div class="section-container">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>Music Curation</h3>
+                <p>Carefully selected playlists and artist features that showcase the best in independent music across
+                  all genres.</p>
+              </div>
+              <div class="service-card">
+                <div class="service-icon">🎤</div>
+                <h3>Live Shows</h3>
+                <p>Regular live performances featuring both established and emerging artists, streamed directly to our
+                  global audience.</p>
+              </div>
+              <div class="service-card">
+                <div class="service-icon">🎙️</div>
+                <h3>Podcasts</h3>
+                <p>Original content that dives deep into music culture, featuring artist interviews, industry insights,
+                  and trend analysis.</p>
+              </div>
+              <div class="service-card">
+                <div class="service-icon">🌟</div>
+                <h3>Artist Support</h3>
+                <p>Platform and resources for independent artists to reach new audiences and grow their careers.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Team Section -->
+        <section class="team-section">
+          <div class="section-container">
+            <h2>Meet The Team</h2>
+            <div class="team-grid">
+              <div class="team-card">
+                <img src="IMG_4520.jpg" alt="Team Member" class="team-image">
+                <h3>Joanna Gonzalez</h3>
+                <p class="team-role"> Head Programmer and Design</p>
+              </div>
+              <div class="team-card">
+                <img src="/api/placeholder/200/200" alt="Team Member" class="team-image">
+                <h3>Darius Hoger</h3>
+                <p class="team-role">Testing and Design</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Join Us Section -->
+        <section class="join-section">
+          <div class="section-container">
+            <div class="join-content">
+              <h2>Join Our Community</h2>
+              <p>Be part of a growing community of music lovers, artists, and creators. Whether you're here to discover
+                new music or share your own, there's a place for you at WaveWire Radio.</p>
+              <div class="cta-buttons">
+                <button class="secondary-btn">Start Listening</button>
+                <button class="secondary-btn">Submit Your Music</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="header">
+          <div>© 2024 WaveWire Radio. All Rights Reserved.</div>
+          <div class="nav">
+            <a href="#" class="nav-btn">Privacy Policy</a>
+            <a href="#" class="nav-btn">Terms of Service</a>
+            <a href="#" class="nav-btn">Contact</a>
+          </div>
+        </footer>
+      </div>
+  </section>
+
+  <section id="shop" class="page-section">
+    <div class="cart-container" onclick="goToCartPage()">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="product-container">
+      <div class="product-card">
+        <h3>Steve Lacy - Gemini Rights</h3>
+        <p>Limited Edition Vinyl</p>
+        <p>$24.99</p>
+        <button onclick="addToCart('Steve Lacy - Gemini Rights', 24.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <h3>WaveWire Classic Tee</h3>
+        <p>100% Cotton, Unisex</p>
+        <p>$19.99</p>
+        <button onclick="addToCart('WaveWire Classic Tee', 19.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <h3>WaveWire Snapback</h3>
+        <p>Adjustable Size, Black</p>
+        <p>$15.99</p>
+        <button onclick="addToCart('WaveWire Snapback', 15.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <h3>JVKE - Complete Collection</h3>
+        <p>Special Edition Vinyl Box Set</p>
+        <p>$49.99</p>
+        <button onclick="addToCart('JVKE - Complete Collection', 49.99)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="live-shows" class="page-section">
+    <div class="main-content">
+      <div class="live-shows-section">
+        <h1>Live Shows & Streams</h1>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('live-streams')">Live Streams</button>
+          <button class="tab" onclick="showTab('upcoming-shows')">Upcoming Shows</button>
+        </div>
+
+        <div id="live-streams-content">
+          <div class="live-grid">
+            <div class="live-show-card">
+              <div class="live-banner">LIVE NOW</div>
+              <div class="live-thumbnail">🎸</div>
+              <div class="live-content">
+                <h3>Steve Lacy - Live Studio Session</h3>
+                <div class="live-meta">
+                  <div class="viewer-count">
+                    <span>👥</span>
+                    <span>24.8K watching</span>
+                  </div>
+                  <span>🎵 Pop/R&B</span>
+                </div>
+                <div class="live-cta">
+                  <button class="live-button watch-button">Watch Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="live-show-card">
+              <div class="live-thumbnail">🎤</div>
+              <div class="live-content">
+                <h3>JVKE - Acoustic Performance</h3>
+                <div class="live-meta">
+                  <span>🗓️ Starting in 2 hours</span>
+                  <span>🎵 Pop</span>
+                </div>
+                <div class="live-cta">
+                  <button class="live-button remind-button">Set Reminder</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="live-show-card">
+              <div class="live-banner">LIVE NOW</div>
+              <div class="live-thumbnail">🎹</div>
+              <div class="live-content">
+                <h3>Chappell Roan - New Album Preview</h3>
+                <div class="live-meta">
+                  <div class="viewer-count">
+                    <span>👥</span>
+                    <span>18.3K watching</span>
+                  </div>
+                  <span>🎵 Indie Pop</span>
+                </div>
+                <div class="live-cta">
+                  <button class="live-button watch-button">Watch Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="upcoming-shows-content" style="display: none;">
+          <div class="event-list">
+            <div class="event-card">
+              <div class="event-date">
+                <div class="event-date-day">15</div>
+                <div>NOV</div>
+              </div>
+              <div class="event-details">
+                <h3>Steve Lacy - Gemini Rights Tour</h3>
+                <div class="event-venue">Madison Square Garden, New York</div>
+                <div>🎟️ Tickets from $59.99</div>
+              </div>
+              <button class="ticket-button">Get Tickets</button>
+            </div>
+
+            <div class="event-card">
+              <div class="event-date">
+                <div class="event-date-day">22</div>
+                <div>NOV</div>
+              </div>
+              <div class="event-details">
+                <h3>JVKE - World Tour</h3>
+                <div class="event-venue">O2 Arena, London</div>
+                <div>🎟️ Tickets from $49.99</div>
+              </div>
+              <button class="ticket-button">Get Tickets</button>
+            </div>
+
+            <div class="event-card">
+              <div class="event-date">
+                <div class="event-date-day">29</div>
+                <div>NOV</div>
+              </div>
+              <div class="event-details">
+                <h3>Chappell Roan - Album Release Show</h3>
+                <div class="event-venue">The Wiltern, Los Angeles</div>
+                <div>🎟️ Tickets from $39.99</div>
+              </div>
+              <button class="ticket-button">Get Tickets</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    
-        <!-- Add more song cards as needed -->
-      </div>
-    </section>
+  <section id="news" class="page-section">
+    <div class="main-content">
+      <div class="news-container">
+        <h1>Indie Music News</h1>
+        </header>
+        <div class="news-container">
+          <article class="news-article">
+            <h2 class="article-title">New Indie Artist Album Released: 'Waves of Emotion'</h2>
+            <p class="article-date">December 3, 2024 | By WaveWire Music</p>
+            <img src="4.png" alt="Indie Artist Image" class="article-image">
+            <p class="article-content">
+              Indie artist Jamie Brooks has just released their highly anticipated album, "Waves of Emotion," which
+              blends heartfelt lyrics with experimental soundscapes. Fans are already calling it their best work yet.
+              The album features tracks like "Into the Night" and "Rising Sun," which have garnered praise for their raw
+              vulnerability and unique style.
+              <br><br>
+              "Waves of Emotion" is available for streaming on all major platforms, and Jamie will be touring in select
+              cities across the country starting next month. Don't miss out on experiencing their soulful performances
+              live!
+            </p>
+            <a href="https://www.artistwebsite.com" class="read-more">Read More</a>
+          </article>
 
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const sidebarClose = document.getElementById("sidebarClose");
-      const sidebarOpen = document.getElementById("sidebarOpen");
-      const links = document.querySelectorAll(".nav-link, .nav-btn");
-      const content = document.getElementById("content");
+          <article class="news-article">
+            <h2 class="article-title">Indie Artist Release Party Recap: A Night to Remember</h2>
+            <p class="article-date">November 28, 2024 | By WaveWire Music</p>
+            <img src="5.png" alt="Release Party Image" class="article-image">
+            <p class="article-content">
+              Last week, indie sensation Alex Rivers threw an unforgettable album release party in downtown Los Angeles.
+              Fans gathered to celebrate the release of their debut album "Echoes," an ethereal mix of folk and indie
+              rock. The event was packed with energy, featuring live performances, an interactive art exhibit, and
+              exclusive behind-the-scenes content for fans.
+              <br><br>
+              The crowd was treated to an intimate acoustic set, which included new songs from the album, as well as a
+              few fan favorites. The night concluded with a surprise guest appearance by fellow indie artist, Zara Mae,
+              who joined Alex on stage for a duet.
+            </p>
+            <a href="https://www.artistwebsite.com" class="read-more">Read More</a>
+          </article>
 
-      // Content for each page
-      const pages = {
-        "for-you": `
-  <div class="home-container">
-    <div class="hero-section">
-      <div class="hero-content">
-        <h1>Discover Your Next Favorite Artist</h1>
-        <p class="hero-subtitle">Stream unlimited music, live shows, and podcasts</p>
-        <button class="primary-btn">Start Listening</button>
+          <!-- Blog Post 1 -->
+          <article class="blog-post">
+            <h2 class="article-title">The Evolution of Indie Music: From DIY to Global Phenomenon</h2>
+            <p class="article-date">November 20, 2024 | By WaveWire Blog</p>
+            <p class="article-content">
+              Indie music has come a long way from its humble beginnings in small clubs and basement studios. Today,
+              indie artists are not just a niche group—they are making waves across all genres of music. In this post,
+              we’ll explore the evolution of indie music and how it has become a global phenomenon, influencing
+              everything from fashion to technology.
+              <br><br>
+              The rise of digital platforms, like Spotify and Bandcamp, has made it easier for independent artists to
+              distribute their music directly to fans worldwide. This shift has allowed musicians to build their own
+              brands and connect with audiences without relying on major record labels. The internet has democratized
+              music production and consumption, leading to a diverse and vibrant indie scene.
+            </p>
+            <a href="https://www.blog.com/indie-music-evolution" class="read-more">Read More</a>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="blog-post">
+            <h2 class="article-title">5 Indie Artists You Need to Listen to in 2025</h2>
+            <p class="article-date">November 18, 2024 | By WaveWire Blog</p>
+            <p class="article-content">
+              As we look ahead to 2025, indie music is poised to continue its reign in the global music scene. From new
+              album releases to emerging talents, there’s a lot to be excited about in the world of indie music. In this
+              post, we highlight five rising indie artists who are making waves and are definitely worth adding to your
+              playlist.
+              <br><br>
+              1. **Olivia Rae** – With her hauntingly beautiful voice and indie-folk sound, Olivia is quickly becoming
+              one of the most talked-about artists of the year.
+              <br>
+              2. **The Blue Hearts** – This indie rock band has a sound that fuses grunge and alternative, and they’re
+              bringing back the energy of the ‘90s with a fresh twist.
+              <br>
+              3. **Liam Grey** – Liam’s experimental pop tracks are breaking barriers and capturing the attention of
+              listeners worldwide.
+              <br><br>
+              Keep your eye on these talented musicians as they prepare to release new music and embark on their tours
+              in the coming year!
+            </p>
+            <a href="https://www.blog.com/indie-artists-2025" class="read-more">Read More</a>
+          </article>
+        </div>
+        <footer>
+          <p>© 2024 WaveWire Music. All rights reserved.</p>
+        </footer>
       </div>
     </div>
+  </section>
 
-    <div class="featured-section">
-      <h2>Featured Artists</h2>
-      <div class="featured-grid">
-        <div class="artist-card" data-spotify-id="57vWImR43h4CaDao012Ofp">
-          <img src="images/steve.jpeg" alt="Steve Lacy" class="artist-image">
-          <div class="artist-info">
-            <div>
-              <h3>Steve Lacy</h3>
-              <p>Pop/R&B</p>
-              <div class="artist-stats">
-                <span>🎵 2.5M monthly listeners</span>
-              </div>
-            </div>
-            <button class="secondary-btn" onclick="showArtistEmbed('57vWImR43h4CaDao012Ofp')">Listen Now</button>
-          </div>
-          <div class="spotify-embed-container" style="display: none;">
-            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
-            <iframe 
-              src="https://open.spotify.com/embed/artist/57vWImR43h4CaDao012Ofp" 
-              width="100%" 
-              height="352" 
-              frameborder="0" 
-              allowtransparency="true" 
-              allow="encrypted-media"
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
+  <section id="support" class="page-section">
+    <div class="main-content">
+      <div class="support-container">
+        <h1>Support WaveWire Radio</h1>
+        </header>
 
-        <div class="artist-card" data-spotify-id="3rQI18thJqWxAOUQwGCtD9">
-          <img src="images/chappell.jpg" alt="Chappell Roan" class="artist-image">
-          <div class="artist-info">
-            <div>
-              <h3>Chappell Roan</h3>
-              <p>Indie Pop</p>
-              <div class="artist-stats">
-                <span>🎵 1.8M monthly listeners</span>
-              </div>
-            </div>
-            <button class="secondary-btn" onclick="showArtistEmbed('3rQI18thJqWxAOUQwGCtD9')">Listen Now</button>
-          </div>
-          <div class="spotify-embed-container" style="display: none;">
-            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
-            <iframe 
-              src="https://open.spotify.com/embed/artist/3rQI18thJqWxAOUQwGCtD9" 
-              width="100%" 
-              height="352" 
-              frameborder="0" 
-              allowtransparency="true" 
-              allow="encrypted-media"
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
+        <div class="container">
+          <section class="support-info">
+            <h2>Your Support Makes a Difference</h2>
+            <p>
+              At WaveWire Radio, we believe in the power of indie music to inspire, connect, and uplift. As a
+              listener-supported platform, your donations help us continue to share the best indie tracks, support
+              emerging artists, and keep our community alive. Whether you're an artist, a fan, or just someone who
+              believes in the value of independent music, we are grateful for your support.
+            </p>
 
-        <div class="artist-card" data-spotify-id="164Uj4eKjl6zTBKfJLFKKK">
-          <img src="images/jvke.jpg" alt="JVKE" class="artist-image">
-          <div class="artist-info">
-            <div>
-              <h3>JVKE</h3>
-              <p>Pop</p>
-              <div class="artist-stats">
-                <span>🎵 3.2M monthly listeners</span>
-              </div>
-            </div>
-            <button class="secondary-btn" onclick="showArtistEmbed('164Uj4eKjl6zTBKfJLFKKK')">Listen Now</button>
-          </div>
-          <div class="spotify-embed-container" style="display: none;">
-            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
-            <iframe 
-              src="https://open.spotify.com/embed/artist/164Uj4eKjl6zTBKfJLFKKK" 
-              width="100%" 
-              height="352" 
-              frameborder="0" 
-              allowtransparency="true" 
-              allow="encrypted-media"
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
+            <h3>How You Can Help</h3>
+            <ul>
+              <li><strong>One-time Donations:</strong> Make a one-time contribution to support the station.</li>
+              <li><strong>Monthly Membership:</strong> Become a member and enjoy exclusive content, early access to new
+                music, and special perks.</li>
+              <li><strong>Spread the Word:</strong> Share WaveWire Radio with your friends, family, and social media
+                followers to help us grow!</li>
+            </ul>
 
-        <div class="artist-card" data-spotify-id="4Uc8Dsxct0oMqx0P6i60ea">
-          <img src="images/conan.jpg" alt="Conan Gray" class="artist-image">
-          <div class="artist-info">
-            <div>
-              <h3>Conan Gray</h3>
-              <p>Indie Pop</p>
-              <div class="artist-stats">
-                <span>🎵 1.8M monthly listeners</span>
-              </div>
+            <div class="donation-button">
+              <a href="donatelink.html" class="donate-btn">Donate Now</a>
             </div>
-            <button class="secondary-btn" onclick="showArtistEmbed('4Uc8Dsxct0oMqx0P6i60ea')">Listen Now</button>
-          </div>
-          <div class="spotify-embed-container" style="display: none;">
-            <button class="close-embed-btn" onclick="closeArtistEmbed(this)">×</button>
-            <iframe 
-              src="https://open.spotify.com/embed/artist/4Uc8Dsxct0oMqx0P6i60ea" 
-              width="100%" 
-              height="352" 
-              frameborder="0" 
-              allowtransparency="true" 
-              allow="encrypted-media"
-              loading="lazy">
-            </iframe>
-          </div>
+          </section>
+
+          <section class="thank-you">
+            <h2>Thank You!</h2>
+            <p>Your support allows us to keep creating and sharing music that matters. Every contribution, big or small,
+              makes a real impact. Thank you for being part of the WaveWire family!</p>
+          </section>
         </div>
+        <footer>
+          <p>© 2024 WaveWire Radio. All rights reserved.</p>
+        </footer>
       </div>
-    </div> `,
-        "live-radio": `
-          <h1>Live Radio</h1>
-          <div class="music-card">
-            <span class="music-icon">📻</span>
-            <div class="music-info">
-              <h3>Top Radio Stations</h3>
-              <p>Listen to live radio stations from around the world.</p>
-            </div>
-          </div>
-        `,
-        about: `
-          <h1>About Us</h1>
-          <p>WaveWire Radio is your ultimate destination for music streaming and discovery.</p>
-        `,
-        support: `
-          <h1>Support Us</h1>
-          <p>Help us keep the music playing by supporting WaveWire Radio.</p>
-        `,
-        podcasts: `
-          <h1>Podcasts</h1>
-          <p>Discover and listen to your favorite podcasts.</p>
-        `,
-        "artist-radio": `
-          <h1>Artist Radio</h1>
-          <p>Radio stations based on your favorite artists.</p>
-        `,
-        news: `
-          <h1>News</h1>
-          <p>Stay updated with the latest music news and trends.</p>
-        `,
-        "your-library": `
-          <h1>Your Library</h1>
-          <p>Access your saved songs, albums, and playlists.</p>
-        `,
-        playlists: `
-          <h1>Playlists</h1>
-          <p>Create and manage your music playlists.</p>
-          
-        `,
-        "events-concerts": `
-          <h1>Events and Concerts</h1>
-          <p>Find upcoming music events and concerts near you.</p>
-        `,
-        "vinyl-merch": `
-          <h1>Vinyl Records & Merchandise</h1>
-          <div class="merch-grid">
-            <div class="merch-card">
-              <div class="merch-image">💿</div>
-              <div class="merch-info">
-                <h3>Steve Lacy - Gemini Rights</h3>
-                <p>Limited Edition Vinyl</p>
-                <div class="merch-price">$24.99</div>
-                <button class="merch-button">Add to Cart</button>
-              </div>
-            </div>
-            
-            <div class="merch-card">
-              <div class="merch-image">👕</div>
-              <div class="merch-info">
-                <h3>WaveWire Classic Tee</h3>
-                <p>100% Cotton, Unisex</p>
-                <div class="merch-price">$19.99</div>
-                <button class="merch-button">Add to Cart</button>
-              </div>
-            </div>
-            
-            <div class="merch-card">
-              <div class="merch-image">🧢</div>
-              <div class="merch-info">
-                <h3>WaveWire Snapback</h3>
-                <p>Adjustable Size, Black</p>
-                <div class="merch-price">$15.99</div>
-                <button class="merch-button">Add to Cart</button>
-              </div>
-            </div>
-            
-            <div class="merch-card">
-              <div class="merch-image">💿</div>
-              <div class="merch-info">
-                <h3>JVKE - Complete Collection</h3>
-                <p>Special Edition Vinyl Box Set</p>
-                <div class="merch-price">$49.99</div>
-                <button class="merch-button">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        `,
-        "live-shows": `
-          <h1>Live Shows & Streams</h1>
-          <div class="tabs">
-            <button class="tab active" onclick="showTab('live-streams')">Live Streams</button>
-            <button class="tab" onclick="showTab('upcoming-shows')">Upcoming Shows</button>
-          </div>
+    </div>
+  </section>
 
-          <div id="live-streams-content">
-            <div class="live-grid">
-              <div class="live-show-card">
-                <div class="live-banner">LIVE NOW</div>
-                <div class="live-thumbnail">🎸</div>
-                <div class="live-content">
-                  <h3>Steve Lacy - Live Studio Session</h3>
-                  <div class="live-meta">
-                    <div class="viewer-count">
-                      <span>👥</span>
-                      <span>24.8K watching</span>
-                    </div>
-                    <span>🎵 Pop/R&B</span>
-                  </div>
-                  <div class="live-cta">
-                    <button class="live-button watch-button">Watch Now</button>
-                  </div>
-                </div>
-              </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-              <div class="live-show-card">
-                <div class="live-thumbnail">🎤</div>
-                <div class="live-content">
-                  <h3>JVKE - Acoustic Performance</h3>
-                  <div class="live-meta">
-                    <span>🗓️ Starting in 2 hours</span>
-                    <span>🎵 Pop</span>
-                  </div>
-                  <div class="live-cta">
-                    <button class="live-button remind-button">Set Reminder</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="live-show-card">
-                <div class="live-banner">LIVE NOW</div>
-                <div class="live-thumbnail">🎹</div>
-                <div class="live-content">
-                  <h3>Chappell Roan - New Album Preview</h3>
-                  <div class="live-meta">
-                    <div class="viewer-count">
-                      <span>👥</span>
-                      <span>18.3K watching</span>
-                    </div>
-                    <span>🎵 Indie Pop</span>
-                  </div>
-                  <div class="live-cta">
-                    <button class="live-button watch-button">Watch Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="upcoming-shows-content" style="display: none;">
-            <div class="event-list">
-              <div class="event-card">
-                <div class="event-date">
-                  <div class="event-date-day">15</div>
-                  <div>NOV</div>
-                </div>
-                <div class="event-details">
-                  <h3>Steve Lacy - Gemini Rights Tour</h3>
-                  <div class="event-venue">Madison Square Garden, New York</div>
-                  <div>🎟️ Tickets from $59.99</div>
-                </div>
-                <button class="ticket-button">Get Tickets</button>
-              </div>
-
-              <div class="event-card">
-                <div class="event-date">
-                  <div class="event-date-day">22</div>
-                  <div>NOV</div>
-                </div>
-                <div class="event-details">
-                  <h3>JVKE - World Tour</h3>
-                  <div class="event-venue">O2 Arena, London</div>
-                  <div>🎟️ Tickets from $49.99</div>
-                </div>
-                <button class="ticket-button">Get Tickets</button>
-              </div>
-
-              <div class="event-card">
-                <div class="event-date">
-                  <div class="event-date-day">29</div>
-                  <div>NOV</div>
-                </div>
-                <div class="event-details">
-                  <h3>Chappell Roan - Album Release Show</h3>
-                  <div class="event-venue">The Wiltern, Los Angeles</div>
-                  <div>🎟️ Tickets from $39.99</div>
-                </div>
-                <button class="ticket-button">Get Tickets</button>
-              </div>
-            </div>
-          </div>
-        `,
-      };
-
-      function showArtistEmbed(spotifyId) {
-        // Hide all embed containers first
-        const containers = document.querySelectorAll(
-          ".spotify-embed-container"
-        );
-        containers.forEach((container) => (container.style.display = "none"));
-
-        // Show the selected artist's embed container
-        const artistCard = document.querySelector(
-          `[data-spotify-id="${spotifyId}"]`
-        );
-        const embedContainer = artistCard.querySelector(
-          ".spotify-embed-container"
-        );
-        embedContainer.style.display = "block";
-
-        // Scroll the embed into view
-        embedContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-
-      function closeArtistEmbed(button) {
-        const container = button.closest(".spotify-embed-container");
-        container.style.display = "none";
-      }
+  <script>
+    // Handle navigation
+    document.querySelectorAll('.nav-btn, .donate-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and sections
+        initTrendingSection();
+        document.querySelectorAll('.nav-btn, .donate-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
 
 
-      function toggleEmbed(songId) {
+        // Add active class to clicked button and corresponding section
+        button.classList.add('active');
+        const pageId = button.getAttribute('data-page');
+        document.getElementById(pageId)?.classList.add('active');
+      });
+    });
+
+
+    function showArtistEmbed(artistId) {
+      // Hide all embed containers first
+      const containers = document.querySelectorAll(
+        ".spotify-embed-container"
+      );
+      containers.forEach((container) => (container.style.display = "none"));
+
+      // Show the selected artist's embed container
+      const artistCard = document.querySelector(
+        `[data-artist-id="${artistId}"]`
+      );
+      const embedContainer = artistCard.querySelector(
+        ".spotify-embed-container"
+      );
+      embedContainer.style.display = "block";
+
+      // Scroll the embed into view
+      embedContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function closeArtistEmbed(button) {
+      const container = button.closest(".spotify-embed-container");
+      container.style.display = "none";
+    }
+
+
+
+    function toggleEmbed(songId) {
       const embed = document.getElementById(songId);
-      const allEmbeds = document.querySelectorAll('.spotify-embed');
-      
+      const allEmbeds = document.querySelectorAll('.spotify-embed-container');
+
+
       // Close all other embeds
       allEmbeds.forEach(el => {
         if (el.id !== songId) {
           el.classList.remove('active');
         }
       });
-      
+
+
       // Toggle current embed
       embed.classList.toggle('active');
     }
 
+    function initTrendingSection() {
+      // Get all song cards
+      const songCards = document.querySelectorAll('.song-card');
 
-      // Load content based on page ID
-      function loadContent(pageId) {
-        const cleanPageId = pageId.replace("#", "");
-        content.innerHTML = pages[cleanPageId] || "<h1>Page Not Found</h1>";
+      // Get the active song ID from localStorage (if any)
+      const activeId = localStorage.getItem('activeSongId');
 
-        // Update active states
-        links.forEach((link) => {
-          const linkPageId = link.getAttribute("href").substring(1);
-          link.classList.toggle("active", linkPageId === cleanPageId);
-        });
-      }
-
-      // Event listener for all navigation links
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const pageId = e.currentTarget.getAttribute("href").substring(1);
-          loadContent(pageId);
-
-          if (window.innerWidth <= 768) {
-            sidebar.classList.add("collapsed");
-          }
-        });
-      });
-
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const pageId = e.currentTarget.getAttribute("href").substring(1);
-          loadContent(pageId);
-
-          if (window.innerWidth <= 768) {
-            sidebar.classList.add("collapsed");
-          }
-        });
-      });
-
-      // Close sidebar
-      sidebarClose.addEventListener("click", () => {
-        sidebar.classList.add("collapsed");
-      });
-
-      // Open sidebar
-      sidebarOpen.addEventListener("click", () => {
-        sidebar.classList.remove("collapsed");
-      });
-
-
-function initTrendingSection() {
-    // Get all song cards
-    const songCards = document.querySelectorAll('.song-card');
-    
-    // Get the active song ID from localStorage (if any)
-    const activeId = localStorage.getItem('activeSongId');
-    
-    // If there was an active song, show it
-    if (activeId) {
+      // If there was an active song, show it
+      if (activeId) {
         const activeEmbed = document.querySelector(`#embed-${activeId}`);
         if (activeEmbed) {
-            activeEmbed.classList.add('active');
+          activeEmbed.classList.add('active');
         }
-    }
-    
-    // Add click handlers to all song cards
-    songCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            const songId = this.dataset.songId;
-            const embed = document.querySelector(`#embed-${songId}`);
-            
-            // If clicking the same song, toggle it off
-            if (embed.classList.contains('active')) {
-                embed.classList.remove('active');
-                localStorage.removeItem('activeSongId');
-            } else {
-                // Hide all embeds first
-                document.querySelectorAll('.spotify-embed').forEach(embed => {
-                    embed.classList.remove('active');
-                });
-                
-                // Show the clicked song's embed
-                embed.classList.add('active');
-                localStorage.setItem('activeSongId', songId);
-            }
+      }
+
+      // Add click handlers to all song cards
+      songCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+          const songId = this.dataset.songId;
+          const embed = document.querySelector(`#embed-${songId}`);
+
+          // If clicking the same song, toggle it off
+          if (embed.classList.contains('active')) {
+            embed.classList.remove('active');
+            localStorage.removeItem('activeSongId');
+          } else {
+            // Hide all embeds first
+            document.querySelectorAll('.spotify-embed-container').forEach(embed => {
+              embed.classList.remove('active');
+            });
+
+            // Show the clicked song's embed
+            embed.classList.add('active');
+            localStorage.setItem('activeSongId', songId);
+          }
         });
-    });
-}
+      });
+    }
 
-// Initialize when the page loads
-document.addEventListener('DOMContentLoaded', initTrendingSection);
+    async function fetchArtistData() {
+      const url = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`;;
+      const options = {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': '3dad32e2b4msh9a01942d11714afp1d8e40jsn1aea6ef7d0cc',
+          'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+
+        // Check if the response is ok
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        // Create artist card with proper error handling for missing data
+        const artistContainer = document.getElementById('artist-container');
+        if (!artistContainer) {
+          throw new Error('Artist container element not found');
+        }
+
+        const artistCard = document.createElement('div');
+        artistCard.classList.add('artist-card');
+
+        // Use optional chaining to safely access potentially undefined properties
+        artistCard.innerHTML = `
+            <img 
+                class="artist-image" 
+                src="${result.picture_big || 'default-image-url.jpg'}" 
+                alt="${result.name || 'Artist'}"
+                onerror="this.src='default-image-url.jpg'"
+            >
+            <div class="artist-info">
+                <h3>${result.name || 'Unknown Artist'}</h3>
+                <p class="artist-stats">Fans: ${result.nb_fan?.toLocaleString() || 'N/A'}</p>
+            </div>
+            <button 
+                class="secondary-btn" 
+                onclick="toggleEmbed(${artistId})"
+                aria-label="Show top tracks for ${result.name || 'artist'}"
+            >
+                Show Top Tracks
+            </button>
+            <div class="spotify-embed-container" id="embed-${artistId}">
+                <iframe
+                    title="${result.name || 'Artist'}'s Top Tracks"
+                    src="https://widget.deezer.com/widget/dark/artist/${artistId}/top_tracks"
+                    width="100%"
+                    height="200"
+                    frameborder="0"
+                    allowtransparency="true"
+                    allow="encrypted-media"
+                    loading="lazy"
+                >
+                </iframe>
+                <button 
+                    class="close-embed-btn" 
+                    onclick="toggleEmbed(${artistId})"
+                    aria-label="Close top tracks"
+                >
+                    Close
+                </button>
+            </div>
+        `;
+
+        artistContainer.appendChild(artistCard);
+
+      } catch (error) {
+        console.error('Error fetching artist data:', error);
+        // Show user-friendly error message
+        const artistContainer = document.getElementById('artist-container');
+        if (artistContainer) {
+          artistContainer.innerHTML += `
+                <div class="error-message">
+                    Sorry, we couldn't load the artist information. Please try again later.
+                </div>
+            `;
+        }
+      }
+    }
 
 
+    const artistIds = [65574, 12945219, 14486481, 1619572, 6630050,9541274]; // Replace with desired artist IDs
+    artistIds.forEach(fetchArtistData);
 
-      // Load default page
-      loadContent("for-you");
-    </script>
-  </body>
+
+    // Get cart count and items from localStorage
+    function getCartData() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      return cart;
+    }
+
+    // Update the cart icon with item count
+    function updateCartCount() {
+      const cart = getCartData();
+      const cartCount = document.getElementById('cartCount');
+      cartCount.textContent = cart.length;
+    }
+
+    // Add an item to the cart
+    function addToCart(itemName, itemPrice) {
+      let cart = getCartData();
+      cart.push({ name: itemName, price: itemPrice });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    // Redirect to the cart page
+    function goToCartPage() {
+      window.location.href = 'cart.html';
+    }
+
+    // On page load, update the cart count
+    window.onload = updateCartCount;
+
+  </script>
+</body>
+
 </html>
