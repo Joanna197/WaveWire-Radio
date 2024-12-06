@@ -6,12 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WaveWire Radio</title>
   <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="header">
-    <div class="logo">🎵WaveWire Radio</div>
-    <nav class="nav">
+  <div class="header"
+    style="position: relative; height: 150px; display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="Wavewire Radio 2 (Logo)/Wavewire Radio 2.png" alt="Wavewire Radio Logo" style="height: 100px;">
+    </div>
+
+    <!-- Navigation Section -->
+    <nav class="nav" style="display: flex; gap: 15px;">
       <span class="nav-btn active" data-page="home">Home</span>
       <span class="nav-btn" data-page="about">About Us</span>
       <span class="nav-btn" data-page="news">News</span>
@@ -19,22 +28,23 @@
       <span class="nav-btn" data-page="shop">Vinyl & Merch</span>
       <span class="donate-btn" data-page="support">Support Us!</span>
     </nav>
+
+    <!-- Image as Its Own Element -->
+    <img src="Wavewire Radio 2 (Logo)/3.png" alt="Header Decoration"
+      style="width: 400px; height: 400px; position: absolute; top: 0; right: 0; z-index: -1;">
   </div>
-
-
   <!-- Home Page -->
   <section id="home" class="page-section active">
     <main>
       <div class="hero-section">
-        <div class="hero-content">
-          <h1>Discover Your Next Favorite Artist</h1>
-          <p class="hero-subtitle">
-            Stream unlimited music, live shows, and podcasts
-          </p>
-          <button class="primary-btn">Start Listening</button>
+        <div class="container">
+          <div class="text-overlay"> DIVE<br>INTO THE SOUNDS <br>
+            RISING INDIE ARTIST</div>
+          <div class="image-container"></div>
+          <img src="Wavewire Radio 2 (Logo)/2.png" alt="Image 1" class="image1">
+          <img src="Wavewire Radio 2 (Logo)/1.png" alt="Image 2" class="image2">
         </div>
       </div>
-
 
       <!-- Featured Artists Section -->
       <div class="featured-section">
@@ -46,7 +56,7 @@
               <h3>Steve Lacy</h3>
               <p>Pop/R&B</p>
               <div class="artist-stats">
-                <span>🎵 2.5M monthly listeners</span>
+                <span>🎵 29M monthly listeners</span>
               </div>
               <button class="secondary-btn" onclick="showArtistEmbed('65574')">
                 Listen Now
@@ -60,121 +70,220 @@
             </div>
           </div>
 
-
-          <div id="artist-container">
-            <div class="artist-card" data-artist-id="12945219">
-              <div class="artist-info">
-                <img src="https://api.deezer.com/artist/12945219/image" alt="Steve Lacy" class="artist-image">
-                <h3>Chappell Roan</h3>
-                <p>Indie Pop</p>
-                <div class="artist-stats">
-                  <span>🎵 1.8M monthly listeners</span>
-                </div>
-                <button class="secondary-btn" onclick="showArtistEmbed('12945219')">
-                  Listen Now
-                </button>
-                <div class="spotify-embed-container" style="display: none">
-                  <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
-                  <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/12945219/top_tracks"
-                    width="100%" height="300" frameborder="0" allowtransparency="true"
-                    allow="encrypted-media; clipboard-write"></iframe>
-                </div>
+          <div class="artist-card" data-artist-id="12945219">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/12945219/image" alt="Chappell Roan" class="artist-image">
+              <h3>Chappell Roan</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 40M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('12945219')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/12945219/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
               </div>
             </div>
+          </div>
 
-
-            <div id="artist-container">
-              <div class="artist-card" data-artist-id="14486481">
-                <div class="artist-info">
-                  <img src="https://api.deezer.com/artist/14486481/image" alt="Steve Lacy" class="artist-image">
-                  <h3>JVKE</h3>
-                  <p>Pop</p>
-                  <div class="artist-stats">
-                    <span>🎵 3.2M monthly listeners</span>
-                  </div>
-
-                  <button class="secondary-btn" onclick="showArtistEmbed('14486481')">
-                    Listen Now
-                  </button>
-                  <div class="spotify-embed-container" style="display: none">
-                    <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
-                    <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/14486481/top_tracks"
-                      width="100%" height="300" frameborder="0" allowtransparency="true"
-                      allow="encrypted-media; clipboard-write"></iframe>
-                  </div>
-                </div>
+          <div class="artist-card" data-artist-id="14486481">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/14486481/image" alt="JVKE" class="artist-image">
+              <h3>JVKE</h3>
+              <p>Pop</p>
+              <div class="artist-stats">
+                <span>🎵 18M monthly listeners</span>
               </div>
-
-              <div id="artist-container">
-                <div class="artist-card" data-artist-id="1619572">
-                  <div class="artist-info">
-                    <img src="https://api.deezer.com/artist/1619572/image" alt="Steve Lacy" class="artist-image">
-                    <h3>Chappell Roan</h3>
-                    <p>Indie Pop</p>
-                    <div class="artist-stats">
-                      <span>🎵 1.8M monthly listeners</span>
-                    </div>
-                    <button class="secondary-btn" onclick="showArtistEmbed('1619572')">
-                      Listen Now
-                    </button>
-                    <div class="spotify-embed-container" style="display: none">
-                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
-                      <iframe title="deezer-widget"
-                        src="https://widget.deezer.com/widget/dark/artist/1619572/top_tracks" width="100%" height="300"
-                        frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
-                    </div>
-                  </div>
-                </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('14486481')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/14486481/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
               </div>
+            </div>
+          </div>
 
-
-              <div id="artist-container">
-                <div class="artist-card" data-artist-id="6630050">
-                  <div class="artist-info">
-                    <img src="https://api.deezer.com/artist/6630050/image" alt="Steve Lacy" class="artist-image">
-                    <h3>Chappell Roan</h3>
-                    <p>Indie Pop</p>
-                    <div class="artist-stats">
-                      <span>🎵 1.8M monthly listeners</span>
-                    </div>
-                    <button class="secondary-btn" onclick="showArtistEmbed('6630050')">
-                      Listen Now
-                    </button>
-                    <div class="spotify-embed-container" style="display: none">
-                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
-                      <iframe title="deezer-widget"
-                        src="https://widget.deezer.com/widget/dark/artist/6630050/top_tracks" width="100%" height="300"
-                        frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
-
-                    </div>
-                  </div>
-                </div>
+          <div class="artist-card" data-artist-id="1619572">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/1619572/image" alt="Artist" class="artist-image">
+              <h3>Mac Demarco</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 20M monthly listeners</span>
               </div>
-
-              <div id="artist-container">
-                <div class="artist-card" data-artist-id="9541274">
-                  <div class="artist-info">
-                    <img src="https://api.deezer.com/artist/9541274/image" alt="Steve Lacy" class="artist-image">
-                    <h3>Chappell Roan</h3>
-                    <p>Indie Pop</p>
-                    <div class="artist-stats">
-                      <span>🎵 1.8M monthly listeners</span>
-                    </div>
-                    <button class="secondary-btn" onclick="showArtistEmbed('9541274')">
-                      Listen Now
-                    </button>
-                    <div class="spotify-embed-container" style="display: none">
-                      <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
-                      <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/9541274/top_tracks"
-                      width="100%" height="300" frameborder="0" allowtransparency="true"
-                      allow="encrypted-media; clipboard-write"></iframe>
-
-                    </div>
-                  </div>
-                </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('1619572')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/1619572/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
               </div>
+            </div>
+          </div>
 
-             
+          <div class="artist-card" data-artist-id="6630050">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/6630050/image" alt="Artist" class="artist-image">
+              <h3>Mitski</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 28M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('6630050')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/6630050/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="artist-card" data-artist-id="9541274">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/9541274/image" alt="Artist" class="artist-image">
+              <h3>Japanese Breakfast</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('9541274')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/9541274/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="554672">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/554672/image" alt="Artist" class="artist-image">
+              <h3>Vacations</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 11M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('554672')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/554672/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="77142812">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/77142812/image" alt="Artist" class="artist-image">
+              <h3>Duster</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 5M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('77142812')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/77142812/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="14510531">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/14510531/image" alt="Artist" class="artist-image">
+              <h3>Strawberry Guy</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 1M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('14510531')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/14510531/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="5382161">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/5382161/image" alt="Artist" class="artist-image">
+              <h3>Grace Mitchell</h3>
+              <p>Indie/Alternative</p>
+              <div class="artist-stats">
+                <span>🎵 1T monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('5382161')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/5382161/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="8775382">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/8775382/image" alt="Artist" class="artist-image">
+              <h3>Oscar Lang</h3>
+              <p>Indie</p>
+              <div class="artist-stats">
+                <span>🎵 1M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('8775382')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/8775382/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card" data-artist-id="10140464">
+            <div class="artist-info">
+              <img src="https://api.deezer.com/artist/10140464/image" alt="Artist" class="artist-image">
+              <h3>Her's</h3>
+              <p>Indie Pop</p>
+              <div class="artist-stats">
+                <span>🎵 3M monthly listeners</span>
+              </div>
+              <button class="secondary-btn" onclick="showArtistEmbed('10140464')">
+                Listen Now
+              </button>
+              <div class="spotify-embed-container" style="display: none">
+                <button class="close-embed-btn" onclick="closeArtistEmbed(this)">Close</button>
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/artist/10140464/top_tracks"
+                  width="100%" height="300" frameborder="0" allowtransparency="true"
+                  allow="encrypted-media; clipboard-write"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
   </section>
 
@@ -254,7 +363,7 @@
               </div>
               <div class="team-card">
                 <img src="/api/placeholder/200/200" alt="Team Member" class="team-image">
-                <h3>Darius Hoger</h3>
+                <h3>Darius Heger</h3>
                 <p class="team-role">Testing and Design</p>
               </div>
             </div>
@@ -270,20 +379,27 @@
               <p>Be part of a growing community of music lovers, artists, and creators. Whether you're here to discover
                 new music or share your own, there's a place for you at WaveWire Radio.</p>
               <div class="cta-buttons">
-                <button class="secondary-btn">Start Listening</button>
-                <button class="secondary-btn">Submit Your Music</button>
+                <a href="submit_music.html">
+                  <button class="secondary-btn">Submit Your Music</button>
+                </a>
               </div>
             </div>
           </div>
         </section>
-        <footer class="header">
+        <footer class="footer">
           <div>© 2024 WaveWire Radio. All Rights Reserved.</div>
           <div class="nav">
-            <a href="#" class="nav-btn">Privacy Policy</a>
-            <a href="#" class="nav-btn">Terms of Service</a>
-            <a href="#" class="nav-btn">Contact</a>
+              <!-- Link to the Privacy Policy page -->
+              <a href="privacy.html" class="nav-btn">Privacy Policy</a>
+      
+              <!-- Link to the Terms of Service page -->
+              <a href="terms.html" class="nav-btn">Terms of Service</a>
+      
+              <!-- Link to the Contact page -->
+              <a href="contact.html" class="nav-btn">Contact</a>
           </div>
-        </footer>
+      </footer>
+      
       </div>
   </section>
 
@@ -350,11 +466,13 @@
                   <span>🎵 Pop/R&B</span>
                 </div>
                 <div class="live-cta">
-                  <button class="live-button watch-button">Watch Now</button>
+                  <a href="https://www.grammy.com/videos/steve-lacy-bad-habit-2023-grammys-performance-live">
+                    <button class="live-button watch-button">Watch Now</button>
+                  </a>
                 </div>
               </div>
             </div>
-
+            
             <div class="live-show-card">
               <div class="live-thumbnail">🎤</div>
               <div class="live-content">
@@ -758,7 +876,7 @@
     }
 
 
-    const artistIds = [65574, 12945219, 14486481, 1619572, 6630050,9541274]; // Replace with desired artist IDs
+    const artistIds = [65574, 12945219, 14486481, 1619572, 6630050, 9541274, 554672, 77142812, 14510531, 5382161,8775382,10140464]; // Replace with desired artist IDs
     artistIds.forEach(fetchArtistData);
 
 

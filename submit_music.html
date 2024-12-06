@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Music</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #dbed63, #1cff92);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #0a204d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+title {
+    color: #E6FF8C;
+}
+
+h2{
+    color: #E6FF8C;
+}
+
+h1 {
+    text-align: center;
+    color: #E6FF8C;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #E6FF8C;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#submission-status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+ul {
+    margin-top: 20px;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Your Music</h1>
+        <form id="music-form">
+            <label for="artist-name">Artist Name:</label>
+            <input type="text" id="artist-name" name="artist-name" required>
+
+            <label for="song-title">Song Title:</label>
+            <input type="text" id="song-title" name="song-title" required>
+
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required>
+
+            <label for="release-date">Release Date:</label>
+            <input type="date" id="release-date" name="release-date" required>
+
+            <label for="song-file">Song File (MP3):</label>
+            <input type="file" id="song-file" name="song-file" accept=".mp3" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="submission-status"></div>
+
+        <h2>Submitted Songs:</h2>
+        <ul id="submitted-songs"></ul>
+    </div>
+
+    <script>// Get the form and elements
+        // Get the form and elements
+const form = document.getElementById('music-form');
+const status = document.getElementById('submission-status');
+const submittedSongsList = document.getElementById('submitted-songs');
+
+// Save music details to localStorage
+function saveSongDetails(artistName, songTitle, genre, releaseDate, songFile) {
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+        const songDetails = {
+            artistName,
+            songTitle,
+            genre,
+            releaseDate,
+            songFile: event.target.result, // Base64 string
+        };
+
+        let songs = localStorage.getItem('songs');
+        songs = songs ? JSON.parse(songs) : [];
+        songs.push(songDetails);
+        localStorage.setItem('songs', JSON.stringify(songs));
+    };
+
+    reader.readAsDataURL(songFile); // Convert file to Base64
+}
+
+// Display submitted songs
+function displaySubmittedSongs() {
+    const songs = JSON.parse(localStorage.getItem('songs')) || [];
+    submittedSongsList.innerHTML = '';
+
+    songs.forEach((song, index) => {
+        const li = document.createElement('li');
+        
+        li.textContent = `${song.artistName} - ${song.songTitle} (${song.genre}, ${song.releaseDate}) `;
+
+        if (song.songFile) {
+            const audioPlayer = document.createElement('audio');
+            audioPlayer.controls = true;
+            audioPlayer.src = song.songFile;
+            li.appendChild(audioPlayer);
+        }
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '✖';
+        removeBtn.style.marginLeft = '10px';
+        removeBtn.style.color = 'red';
+        removeBtn.style.border = 'none';
+        removeBtn.style.background = 'transparent';
+        removeBtn.style.cursor = 'pointer';
+        removeBtn.title = 'Remove this song';
+
+        removeBtn.addEventListener('click', function () {
+            removeSong(index);
+        });
+
+        li.appendChild(removeBtn);
+        submittedSongsList.appendChild(li);
+    });
+}
+
+// Remove a song
+function removeSong(index) {
+    let songs = JSON.parse(localStorage.getItem('songs')) || [];
+    songs.splice(index, 1); // Remove song by index
+    localStorage.setItem('songs', JSON.stringify(songs));
+    displaySubmittedSongs(); // Refresh the list
+}
+
+// Handle form submission
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const artistName = document.getElementById('artist-name').value;
+    const songTitle = document.getElementById('song-title').value;
+    const genre = document.getElementById('genre').value;
+    const releaseDate = document.getElementById('release-date').value;
+    const songFile = document.getElementById('song-file').files[0];
+
+    if (songFile) {
+        saveSongDetails(artistName, songTitle, genre, releaseDate, songFile);
+        status.textContent = 'Music submitted successfully!';
+        status.style.color = 'green';
+        form.reset();
+        displaySubmittedSongs();
+    } else {
+        status.textContent = 'Please upload a valid song file.';
+        status.style.color = 'red';
+    }
+});
+
+// Display previously submitted songs on page load
+document.addEventListener('DOMContentLoaded', displaySubmittedSongs);
+
+        </script>
+</body>
+</html>
