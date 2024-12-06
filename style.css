@@ -12,21 +12,60 @@ body {
     line-height: 1.5;
   }
   
-
-.header {
-  background: #17162eff;
-  color: #d5f979ff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Logo */
+.logo img {
+  width: 200px;
+  height: auto;
 }
 
-.logo {
-  color: #ecf0f1;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+.header img {
+  width: 200px;
+  height: 200px;
+}
+
+.image-container {
+  position: relative; /* Ensures text is positioned relative to this container */
+  display: inline-block; /* Ensures proper sizing */
+}
+
+.image-container img {
+  width: 100%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.text-overlay br{
+  color:#231269;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 14%; /* Controls vertical placement */
+  right: 15%; /* Adjust to position relative to the container */
+  z-index: 8; /* Ensure it appears above images */
+  transform: rotate(0deg); /* Optional rotation for visual effect */
+  font-weight: bold; /* Keeps the text bold */
+  text-align: left;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds readability with a subtle shadow */
+  color: #E6FF8C; /* Ensures text contrasts against the background */
+  font-size: 4.5rem;
+}
+
+
+.image2 {
+  position: absolute;
+  margin-top: -110px; /* Adjust this value as needed */
+  left: 0%; /* Adjust the left position to control the overlap */
+  top: 35%; /* Add some vertical overlap */
+  z-index: 1;
+  transform: rotate(-5deg); /* Rotate the image slightly for a more natural overlap */
+}
+
+.image1 {
+  position: absolute;
+  left: 20%; /* Adjust the left position to control the overlap */
+  top: 10%; /* Add some vertical overlap */
+  z-index: 1;
+  transform: rotate(-5deg); /* Rotate the image slightly for a more natural overlap */
 }
 
 .nav {
@@ -45,12 +84,14 @@ body {
 }
 
 .nav-btn {
-  color: #ecf0f1;
+  background-color: rgba(255,255,255,0.5);
+  border: #101d2d;
+  text-emphasis-color: (21,27, 102);;
 }
 
 .nav-btn:hover,
 .nav-btn.active {
-  background: #34495e;
+  background: #cbeb61;
 }
 
 .donate-btn {
@@ -86,7 +127,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 5.5rem;
   color: #2c3e50;
   margin-bottom: 1rem;
 }
@@ -156,7 +197,6 @@ body {
 .hero-section {
   text-align: center;
   padding: 10rem 10rem;
-  background: linear-gradient(135deg, #17162eff 0%, #2c2a72 100%);
   color: white;
   margin-bottom: 2rem;
 }
@@ -202,23 +242,31 @@ body {
 #artist-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  background: linear-gradient(to right, #dbed63, #1cff92);
+  flex-wrap: wrap; /* This will make cards wrap to next line */
+  padding: 20px;
 }
 
-
+.artist-card {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
 
 .artist-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
-.artist-card img {
+.artist-card .artist-image {
   width: 100%;
-  /* Makes the image span the width of the card */
-  height: auto;
-  /* Maintains aspect ratio */
-  border-bottom: 1px solid #ddd;
-  /* Optional separation line */
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .secondary-btn:hover,
@@ -229,23 +277,23 @@ body {
 }
 
 .close-embed-btn {
-  background-color: #ff4d4d; /* Red background */
+  position: static; /* Remove absolute positioning */
+  background-color: #ff4d4d;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
+  border-radius: 5px; /* Changed from circular to rounded rectangle */
+  padding: 8px 15px;
+  width: auto;
+  height: auto;
+  font-size: 14px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.close-embed-btn:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
 }
 
 .featured-grid {
@@ -255,30 +303,6 @@ body {
   padding: 15px;
   text-align: center;
 }
-
-.artist-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-
-/* Ensure each artist card is displayed as a block and has spacing */
-.artist-card {
-  display: block; /* Ensures each card is on a new line */
-  margin-bottom: 20px; /* Adds space between cards */
-  padding: 10px; /* Optional: Adds internal spacing */
-  border: 1px solid #ccc; /* Optional: Adds a border for better visual distinction */
-  border-radius: 5px; /* Optional: Rounds the corners */
-  background-color: #f9f9f9; /* Optional: Adds a background for visibility */
-}
-
-/* Additional styling for better layout control */
-.artist-info {
-  margin-top: 10px; /* Adds spacing between artist image and text */
-}
-
-
 
 
 @keyframes pulse {
@@ -491,11 +515,12 @@ body {
 }
 
 
-.spotify-embed {
-  display: none;
-  /* Hidden by default, shown when toggled */
-  margin-top: 10px;
-  /* Adds space between embed and other content */
+.spotify-embed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between iframe and close button */
+  margin-top: 10px; /* Space above the container */
 }
 
 
@@ -815,7 +840,7 @@ body {
 
 /* Product Card Style */
 .product-card {
-  background-color: #1a2b3a; /* Slightly lighter dark blue for cards */
+  background-color: #0a204d; /* Slightly lighter dark blue for cards */
   border-radius: 10px;
   padding: 20px;
   text-align: center;
@@ -830,7 +855,7 @@ body {
 /* Product Title and Price */
 .product-card h3 {
   font-size: 1.5rem;
-  color: #39ff14; /* Neon green color */
+  color: #E6FF8C; /* Neon green color */
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -843,7 +868,7 @@ body {
 
 /* Add to Cart Button */
 .add-to-cart-button {
-  background-color: #39ff14; /* Neon green */
+  background-color: #E6FF8C; /* Neon green */
   color: #101d2d; /* Dark blue text */
   border: none;
   padding: 10px 20px;
@@ -948,7 +973,7 @@ body {
 }
 
 .news-article, .blog-post {
-  background-color: #1a2b3a; /* Slightly lighter dark blue for article background */
+  background-color: #0a204d; /* Slightly lighter dark blue for article background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
@@ -958,7 +983,7 @@ body {
 
 .article-title {
   font-size: 2rem;
-  color: #39ff14; /* Neon green */
+  color: #E6FF8C; /* Neon green */
   margin-bottom: 10px;
 }
 
@@ -985,16 +1010,16 @@ body {
 .read-more {
   display: inline-block;
   font-size: 1rem;
-  color: #39ff14; /* Neon green */
+  color: #E6FF8C; /* Neon green */
   text-decoration: none;
-  border: 2px solid #39ff14;
+  border: 2px solid #E6FF8C;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .read-more:hover {
-  background-color: #39ff14;
+  background-color: #E6FF8C;
   color: #101d2d; /* Dark blue text */
 }
 
@@ -1012,18 +1037,65 @@ body {
 }
 
 
-/* Footer Styles */
 footer {
-  background-color: #101d2d; /* Dark blue background */
-  text-align: center;
-  padding: 20px 0;
+  background-color: #0a204d;
+  color: #a6ff00;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-footer p {
-  font-size: 1rem;
-  color: #bbb;
+footer div:first-child {
+  font-size: 14px;
+  color: #4af600;
 }
 
+footer .nav {
+  display: flex;
+  gap: 20px;
+}
+
+footer .footer-nav-btn {
+  color: #912323;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+footer .footer-nav-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #1cff92;
+  transition: width 0.3s ease;
+}
+
+footer .footer-nav-btn:hover {
+  color: #1cff92;
+}
+
+footer .footer-nav-btn:hover::after {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  footer {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+  }
+
+  footer .nav {
+      flex-direction: column;
+      align-items: center;
+  }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .news-container {
@@ -1045,14 +1117,14 @@ footer p {
 }
 
 .support-info {
-  background-color: #1a2b3a; /* Darker blue background */
+  background-color: #0a204d; /* Darker blue background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
 }
 
 .support-info h2, .support-info h3 {
-  color: #39ff14; /* Neon green */
+  color: #E6FF8C; /* Neon green */
 }
 
 .support-info p {
@@ -1078,16 +1150,16 @@ footer p {
 
 
 .thank-you {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
-  background-color: #1a2b3a;
+  background-color: #0a204d;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
 }
 
 .thank-you h2 {
-  color: #39ff14; /* Neon green */
+  color: #E6FF8C; /* Neon green */
 }
 
 .thank-you p {
